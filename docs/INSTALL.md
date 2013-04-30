@@ -9,5 +9,5 @@ Installation of the IGLUG-Cal website
 4. Copy over all files and directories, except the "sites" folder from that directory to $REPO/drupal/.
 5. Point the web root to $REPO/drupal.
 6. Copy $REPO/drupal/sites/default/default.settings.php to $REPO/drupal/sites/default/settings.php.
-7. Point your browser to the site's URL and install Drupal using "Standard" profile.
+7. Point your browser to the site's URL and install Drupal using "Minimal" profile.
 8. Enable the customization modules to load the site configuration.
