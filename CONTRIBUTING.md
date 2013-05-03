@@ -2,6 +2,9 @@
 
 Dear contributors,
 
+For installing the website on your local server, please see the
+instructions given in the [installation docs](docs/INSTALL.md).
+
 You can either contribute code, custom settings, design or
 documentation to this repository. Here are the steps for each:
 
