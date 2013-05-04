@@ -12,9 +12,9 @@
 function custom_config_drush_ctex_bonus_fields() {
   $fields = array();
 
-  $fields['body'] = array(
+  $fields['comment_body'] = array(
     'entity_types' => array(
-      0 => 'node',
+      0 => 'comment',
     ),
     'translatable' => '0',
     'settings' => array(),
@@ -31,8 +31,8 @@ function custom_config_drush_ctex_bonus_fields() {
         0 => 'format',
       ),
     ),
-    'field_name' => 'body',
-    'type' => 'text_with_summary',
+    'field_name' => 'comment_body',
+    'type' => 'text_long',
     'module' => 'text',
     'active' => '1',
     'locked' => '0',
@@ -73,9 +73,9 @@ function custom_config_drush_ctex_bonus_fields() {
     'deleted' => '0',
   );
 
-  $fields['comment_body'] = array(
+  $fields['body'] = array(
     'entity_types' => array(
-      0 => 'comment',
+      0 => 'node',
     ),
     'translatable' => '0',
     'settings' => array(),
@@ -92,12 +92,77 @@ function custom_config_drush_ctex_bonus_fields() {
         0 => 'format',
       ),
     ),
-    'field_name' => 'comment_body',
-    'type' => 'text_long',
+    'field_name' => 'body',
+    'type' => 'text_with_summary',
     'module' => 'text',
     'active' => '1',
     'locked' => '0',
     'cardinality' => '1',
+    'deleted' => '0',
+  );
+
+  $fields['field_tags'] = array(
+    'translatable' => '0',
+    'entity_types' => array(),
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'tags',
+          'parent' => '0',
+        ),
+      ),
+      'profile2_private' => FALSE,
+    ),
+    'foreign keys' => array(
+      'tid' => array(
+        'table' => 'taxonomy_term_data',
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'field_name' => 'field_tags',
+    'type' => 'taxonomy_term_reference',
+    'module' => 'taxonomy',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '-1',
+    'deleted' => '0',
+  );
+
+  $fields['field_attachments'] = array(
+    'translatable' => '0',
+    'entity_types' => array(),
+    'settings' => array(
+      'display_field' => 0,
+      'display_default' => 0,
+      'uri_scheme' => 'public',
+      'profile2_private' => FALSE,
+    ),
+    'foreign keys' => array(
+      'fid' => array(
+        'table' => 'file_managed',
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'field_name' => 'field_attachments',
+    'type' => 'file',
+    'module' => 'file',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '10',
     'deleted' => '0',
   );
 
@@ -336,71 +401,6 @@ function custom_config_drush_ctex_bonus_fields() {
     'deleted' => '0',
   );
 
-  $fields['field_attachments'] = array(
-    'translatable' => '0',
-    'entity_types' => array(),
-    'settings' => array(
-      'display_field' => 0,
-      'display_default' => 0,
-      'uri_scheme' => 'public',
-      'profile2_private' => FALSE,
-    ),
-    'foreign keys' => array(
-      'fid' => array(
-        'table' => 'file_managed',
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-      ),
-    ),
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'field_name' => 'field_attachments',
-    'type' => 'file',
-    'module' => 'file',
-    'active' => '1',
-    'locked' => '0',
-    'cardinality' => '10',
-    'deleted' => '0',
-  );
-
-  $fields['field_tags'] = array(
-    'translatable' => '0',
-    'entity_types' => array(),
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'tags',
-          'parent' => '0',
-        ),
-      ),
-      'profile2_private' => FALSE,
-    ),
-    'foreign keys' => array(
-      'tid' => array(
-        'table' => 'taxonomy_term_data',
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'field_name' => 'field_tags',
-    'type' => 'taxonomy_term_reference',
-    'module' => 'taxonomy',
-    'active' => '1',
-    'locked' => '0',
-    'cardinality' => '-1',
-    'deleted' => '0',
-  );
-
   return $fields;
 }
 
@@ -470,6 +470,38 @@ function custom_config_drush_ctex_bonus_instances() {
     'field_name' => 'comment_body',
     'entity_type' => 'comment',
     'bundle' => 'comment_node_page',
+    'deleted' => '0',
+    'default_value' => NULL,
+  );
+
+  $instances['comment:comment_node_webform:comment_body'] = array(
+    'label' => 'Comment',
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'required' => TRUE,
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+        'settings' => array(),
+        'module' => 'text',
+      ),
+    ),
+    'widget' => array(
+      'type' => 'text_textarea',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'weight' => 0,
+      'module' => 'text',
+    ),
+    'description' => '',
+    'field_name' => 'comment_body',
+    'entity_type' => 'comment',
+    'bundle' => 'comment_node_webform',
     'deleted' => '0',
     'default_value' => NULL,
   );
@@ -745,6 +777,49 @@ function custom_config_drush_ctex_bonus_instances() {
     'entity_type' => 'node',
     'bundle' => 'page',
     'deleted' => '0',
+  );
+
+  $instances['node:webform:body'] = array(
+    'label' => 'Body',
+    'widget' => array(
+      'type' => 'text_textarea_with_summary',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'weight' => 31,
+      'module' => 'text',
+    ),
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'settings' => array(),
+        'module' => 'text',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'type' => 'text_summary_or_trimmed',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'module' => 'text',
+        'weight' => 0,
+      ),
+    ),
+    'required' => FALSE,
+    'description' => '',
+    'field_name' => 'body',
+    'entity_type' => 'node',
+    'bundle' => 'webform',
+    'deleted' => '0',
+    'default_value' => NULL,
   );
 
   $instances['node:wiki_page:body'] = array(

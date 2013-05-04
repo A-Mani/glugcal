@@ -52,6 +52,22 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['anonymous'] = 'Anonymous';
 
+  $variables['captcha_add_captcha_description'] = 1;
+
+  $variables['captcha_administration_mode'] = 0;
+
+  $variables['captcha_allow_on_admin_pages'] = 0;
+
+  $variables['captcha_default_challenge'] = 'captcha/Math';
+
+  $variables['captcha_default_validation'] = '1';
+
+  $variables['captcha_description'] = 'This question is for testing whether you are a human visitor and to prevent automated spam submissions.';
+
+  $variables['captcha_log_wrong_responses'] = 0;
+
+  $variables['captcha_persistence'] = '1';
+
   $variables['clean_url'] = '1';
 
   $variables['comment_anonymous_page'] = 0;
@@ -186,9 +202,9 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['freelinking_drupalorgnid_http_request'] = 0;
 
-  $variables['freelinking_file_file_path'] = 'public://wiki';
+  $variables['freelinking_file_file_path'] = 'public://';
 
-  $variables['freelinking_match_syntax'] = 'double_bracket';
+  $variables['freelinking_match_syntax'] = 'markdown';
 
   $variables['freelinking_nodetitle_failover'] = 'search';
 
@@ -2051,22 +2067,25 @@ function custom_config_drush_ctex_bonus_variables() {
     17 => 60,
     18 => 59,
     19 => 58,
-    20 => 44,
-    21 => 31,
-    22 => 30,
-    23 => 29,
-    24 => 24,
-    25 => 21,
-    26 => 15,
-    27 => 14,
-    28 => 13,
-    29 => 11,
-    30 => 7,
-    31 => 6,
-    32 => 5,
-    33 => 3,
-    34 => 2,
-    35 => 1,
+    20 => 45,
+    21 => 44,
+    22 => 31,
+    23 => 30,
+    24 => 29,
+    25 => 24,
+    26 => 22,
+    27 => 21,
+    28 => 15,
+    29 => 14,
+    30 => 13,
+    31 => 11,
+    32 => 10,
+    33 => 7,
+    34 => 6,
+    35 => 5,
+    36 => 3,
+    37 => 2,
+    38 => 1,
   );
 
   $variables['menu_options_page'] = array(
@@ -2356,6 +2375,34 @@ Your account on [site:name] has been canceled.
 
   $variables['user_signatures'] = 0;
 
+  $variables['webform_csv_delimiter'] = ',';
+
+  $variables['webform_default_format'] = 0;
+
+  $variables['webform_default_from_address'] = 'glugcal@ilug-cal.info';
+
+  $variables['webform_default_from_name'] = 'IGLUG-Cal';
+
+  $variables['webform_default_subject'] = 'Form submission from: %title';
+
+  $variables['webform_disabled_components'] = array();
+
+  $variables['webform_email_address_format'] = 'long';
+
+  $variables['webform_export_format'] = 'delimited';
+
+  $variables['webform_format_override'] = 0;
+
+  $variables['webform_node_types'] = array(
+    0 => 'webform',
+  );
+
+  $variables['webform_search_index'] = 1;
+
+  $variables['webform_submission_access_control'] = '1';
+
+  $variables['webform_use_cookies'] = 0;
+
   $variables['wikitools_404_type'] = array(
     'Link to creation' => 'Link to creation',
     'Link to search' => 0,
@@ -2390,7 +2437,7 @@ Your account on [site:name] has been canceled.
 
   $variables['wikitools_subpages_handling'] = 'url';
 
-  $variables['xmlsitemap_generated_last'] = 1367676383;
+  $variables['xmlsitemap_generated_last'] = 1367687227;
 
   $variables['xmlsitemap_regenerate_needed'] = TRUE;
 

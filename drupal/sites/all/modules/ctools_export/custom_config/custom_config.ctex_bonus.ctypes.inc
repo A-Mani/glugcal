@@ -29,6 +29,23 @@ function custom_config_drush_ctex_bonus_ctypes() {
     'disabled_changed' => FALSE,
   );
 
+  $ctypes['webform'] = array(
+    'type' => 'webform',
+    'name' => 'Webform',
+    'base' => 'node_content',
+    'module' => 'node',
+    'description' => 'Create a new form or questionnaire accessible to users. Submission results and statistics are recorded and accessible to privileged users.',
+    'help' => '',
+    'has_title' => '1',
+    'title_label' => 'Title',
+    'custom' => '1',
+    'modified' => '1',
+    'locked' => '0',
+    'disabled' => '0',
+    'orig_type' => 'webform',
+    'disabled_changed' => FALSE,
+  );
+
   $ctypes['wiki_page'] = array(
     'type' => 'wiki_page',
     'name' => 'Wiki Page',

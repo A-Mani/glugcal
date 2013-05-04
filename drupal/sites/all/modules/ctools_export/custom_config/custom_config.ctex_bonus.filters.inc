@@ -12,57 +12,12 @@
 function custom_config_drush_ctex_bonus_filters() {
   $filters = array();
 
-  $filters['minimal'] = (object) array(
-    'format' => 'minimal',
-    'name' => 'Minimal',
-    'cache' => '1',
-    'status' => '1',
-    'weight' => '-10',
-    'filters' => array(
-      'freelinking' => array(
-        'weight' => '-49',
-        'status' => '1',
-        'settings' => array(),
-      ),
-      'geshifilter' => array(
-        'weight' => '-48',
-        'status' => '1',
-        'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd>',
-          'filter_html_help' => 1,
-          'filter_html_nofollow' => 0,
-        ),
-      ),
-      'filter_html' => array(
-        'weight' => '-46',
-        'status' => '1',
-        'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <pre> <span> <ul> <ol> <li> <dl> <dt> <dd> <div>',
-          'filter_html_help' => 1,
-          'filter_html_nofollow' => 0,
-        ),
-      ),
-      'filter_url' => array(
-        'weight' => '-45',
-        'status' => '1',
-        'settings' => array(
-          'filter_url_length' => '72',
-        ),
-      ),
-      'filter_htmlcorrector' => array(
-        'weight' => '-43',
-        'status' => '1',
-        'settings' => array(),
-      ),
-    ),
-  );
-
   $filters['markdown'] = (object) array(
     'format' => 'markdown',
     'name' => 'Markdown',
     'cache' => '1',
     'status' => '1',
-    'weight' => '-9',
+    'weight' => '-10',
     'filters' => array(
       'freelinking' => array(
         'weight' => '-50',
@@ -94,6 +49,51 @@ function custom_config_drush_ctex_bonus_filters() {
       ),
       'filter_url' => array(
         'weight' => '-44',
+        'status' => '1',
+        'settings' => array(
+          'filter_url_length' => '72',
+        ),
+      ),
+      'filter_htmlcorrector' => array(
+        'weight' => '-43',
+        'status' => '1',
+        'settings' => array(),
+      ),
+    ),
+  );
+
+  $filters['minimal'] = (object) array(
+    'format' => 'minimal',
+    'name' => 'Minimal',
+    'cache' => '1',
+    'status' => '1',
+    'weight' => '-9',
+    'filters' => array(
+      'freelinking' => array(
+        'weight' => '-49',
+        'status' => '1',
+        'settings' => array(),
+      ),
+      'geshifilter' => array(
+        'weight' => '-48',
+        'status' => '1',
+        'settings' => array(
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd>',
+          'filter_html_help' => 1,
+          'filter_html_nofollow' => 0,
+        ),
+      ),
+      'filter_html' => array(
+        'weight' => '-46',
+        'status' => '1',
+        'settings' => array(
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <pre> <span> <ul> <ol> <li> <dl> <dt> <dd> <div>',
+          'filter_html_help' => 1,
+          'filter_html_nofollow' => 0,
+        ),
+      ),
+      'filter_url' => array(
+        'weight' => '-45',
         'status' => '1',
         'settings' => array(
           'filter_url_length' => '72',
