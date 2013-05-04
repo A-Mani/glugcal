@@ -12,6 +12,8 @@
 function custom_config_drush_ctex_bonus_variables() {
   $variables = array();
 
+  $variables['additional_settings__active_tab_article'] = 'edit-xmlsitemap';
+
   $variables['additional_settings__active_tab_page'] = 'edit-xmlsitemap';
 
   $variables['additional_settings__active_tab_wiki_page'] = 'edit-xmlsitemap';
@@ -70,17 +72,27 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['clean_url'] = '1';
 
+  $variables['comment_anonymous_article'] = 0;
+
   $variables['comment_anonymous_page'] = 0;
 
   $variables['comment_anonymous_wiki_page'] = 0;
+
+  $variables['comment_article'] = '2';
+
+  $variables['comment_default_mode_article'] = 1;
 
   $variables['comment_default_mode_page'] = 1;
 
   $variables['comment_default_mode_wiki_page'] = 1;
 
+  $variables['comment_default_per_page_article'] = '50';
+
   $variables['comment_default_per_page_page'] = '50';
 
   $variables['comment_default_per_page_wiki_page'] = '50';
+
+  $variables['comment_form_location_article'] = 1;
 
   $variables['comment_form_location_page'] = 1;
 
@@ -88,9 +100,13 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['comment_page'] = '1';
 
+  $variables['comment_preview_article'] = '1';
+
   $variables['comment_preview_page'] = '1';
 
   $variables['comment_preview_wiki_page'] = '1';
+
+  $variables['comment_subject_field_article'] = 1;
 
   $variables['comment_subject_field_page'] = 1;
 
@@ -109,6 +125,24 @@ function custom_config_drush_ctex_bonus_variables() {
   $variables['drupal_private_key'] = 'gYRrdsBeKPKJ1egy3Ns5zEmsXT7P-hXOq475ankyi-U';
 
   $variables['email__active_tab'] = 'edit-email-admin-created';
+
+  $variables['field_bundle_settings_node__article'] = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
 
   $variables['field_bundle_settings_node__forum'] = array(
     'view_modes' => array(),
@@ -2088,6 +2122,11 @@ function custom_config_drush_ctex_bonus_variables() {
     38 => 1,
   );
 
+  $variables['menu_options_article'] = array(
+    0 => 'main-menu',
+    1 => 'navigation',
+  );
+
   $variables['menu_options_page'] = array(
     0 => 'main-menu',
   );
@@ -2095,6 +2134,8 @@ function custom_config_drush_ctex_bonus_variables() {
   $variables['menu_options_wiki_page'] = array(
     0 => 'main-menu',
   );
+
+  $variables['menu_parent_article'] = 'main-menu:0';
 
   $variables['menu_parent_page'] = 'main-menu:0';
 
@@ -2181,6 +2222,11 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['node_export_reset_sticky_page'] = 0;
 
+  $variables['node_options_article'] = array(
+    0 => 'status',
+    1 => 'revision',
+  );
+
   $variables['node_options_forum'] = array(
     0 => 'status',
   );
@@ -2195,9 +2241,13 @@ function custom_config_drush_ctex_bonus_variables() {
     1 => 'revision',
   );
 
+  $variables['node_preview_article'] = '1';
+
   $variables['node_preview_page'] = '1';
 
   $variables['node_preview_wiki_page'] = '1';
+
+  $variables['node_submitted_article'] = 1;
 
   $variables['node_submitted_page'] = 0;
 
@@ -2225,6 +2275,8 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['pathauto_user_pattern'] = 'u/[user:name]';
 
+  $variables['save_continue_article'] = 'Save and add fields';
+
   $variables['save_continue_page'] = 'Save and add fields';
 
   $variables['save_continue_wiki_page'] = 'Save and add fields';
@@ -2234,6 +2286,12 @@ function custom_config_drush_ctex_bonus_variables() {
   $variables['site_mail'] = 'glugcal@ilug-cal.info';
 
   $variables['site_name'] = 'IGLUG-Cal';
+
+  $variables['statistics_count_content_views'] = 1;
+
+  $variables['statistics_enable_access_log'] = 1;
+
+  $variables['statistics_flush_accesslog_timer'] = '259200';
 
   $variables['theme_default'] = 'bartik';
 
@@ -2444,6 +2502,11 @@ Your account on [site:name] has been canceled.
   $variables['xmlsitemap_settings_menu_link_main-menu'] = array(
     'status' => '1',
     'priority' => '0.9',
+  );
+
+  $variables['xmlsitemap_settings_node_article'] = array(
+    'status' => '1',
+    'priority' => '0.5',
   );
 
   $variables['xmlsitemap_settings_node_page'] = array(

@@ -12,6 +12,23 @@
 function custom_config_drush_ctex_bonus_ctypes() {
   $ctypes = array();
 
+  $ctypes['article'] = array(
+    'type' => 'article',
+    'name' => 'Article',
+    'base' => 'node_content',
+    'module' => 'node',
+    'description' => 'Add an article that belongs to some category, e.g. news, ',
+    'help' => '',
+    'has_title' => '1',
+    'title_label' => 'Title',
+    'custom' => '1',
+    'modified' => '1',
+    'locked' => '0',
+    'disabled' => '0',
+    'orig_type' => 'article',
+    'disabled_changed' => FALSE,
+  );
+
   $ctypes['page'] = array(
     'type' => 'page',
     'name' => 'Static Page',

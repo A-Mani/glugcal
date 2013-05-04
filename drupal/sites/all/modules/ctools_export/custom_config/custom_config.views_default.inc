@@ -204,7 +204,7 @@ function custom_config_views_default_views() {
   $handler->display->display_options['fields']['new_comments']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['new_comments']['prefix'] = 'View ';
   $handler->display->display_options['fields']['new_comments']['suffix'] = ' new';
-  /* Field: Broken/missing handler */
+  /* Field: Content statistics: Total views */
   $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
   $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
   $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
@@ -477,7 +477,7 @@ function custom_config_views_default_views() {
   $handler->display->display_options['fields']['new_comments']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['new_comments']['prefix'] = ' View ';
   $handler->display->display_options['fields']['new_comments']['suffix'] = ' new';
-  /* Field: Broken/missing handler */
+  /* Field: Content statistics: Total views */
   $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
   $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
   $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
@@ -599,6 +599,7 @@ function custom_config_views_default_views() {
     'created' => 'title',
     'comment_count' => 'comment_count',
     'new_comments' => 'comment_count',
+    'totalcount' => 'totalcount',
     'last_comment_name' => 'last_updated',
     'last_updated' => 'last_updated',
     'sticky' => 'sticky',
@@ -782,6 +783,13 @@ function custom_config_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['empty'] = '0';
   $handler->display->display_options['fields']['comment_count']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['hide_alter_empty'] = FALSE;
+  /* Field: Content statistics: Total views */
+  $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
+  $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['label'] = 'Views';
+  $handler->display->display_options['fields']['totalcount']['empty'] = '0';
+  $handler->display->display_options['fields']['totalcount']['empty_zero'] = TRUE;
   /* Field: Content: Last comment author */
   $handler->display->display_options['fields']['last_comment_name']['id'] = 'last_comment_name';
   $handler->display->display_options['fields']['last_comment_name']['table'] = 'node_comment_statistics';
@@ -1024,7 +1032,7 @@ function custom_config_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['created']['alter']['text'] = 'on [created]';
-  /* Field: Broken/missing handler */
+  /* Field: Content statistics: Total views */
   $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
   $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
   $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
