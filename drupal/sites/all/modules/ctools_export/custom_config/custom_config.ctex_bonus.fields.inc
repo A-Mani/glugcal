@@ -12,6 +12,95 @@
 function custom_config_drush_ctex_bonus_fields() {
   $fields = array();
 
+  $fields['taxonomy_forums'] = array(
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'forums',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'entity_types' => array(),
+    'translatable' => '0',
+    'foreign keys' => array(
+      'tid' => array(
+        'table' => 'taxonomy_term_data',
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'field_name' => 'taxonomy_forums',
+    'type' => 'taxonomy_term_reference',
+    'module' => 'taxonomy',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '1',
+    'deleted' => '0',
+  );
+
+  $fields['comment_body'] = array(
+    'entity_types' => array(
+      0 => 'comment',
+    ),
+    'translatable' => '0',
+    'settings' => array(),
+    'foreign keys' => array(
+      'format' => array(
+        'table' => 'filter_format',
+        'columns' => array(
+          'format' => 'format',
+        ),
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'field_name' => 'comment_body',
+    'type' => 'text_long',
+    'module' => 'text',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '1',
+    'deleted' => '0',
+  );
+
+  $fields['body'] = array(
+    'entity_types' => array(
+      0 => 'node',
+    ),
+    'translatable' => '0',
+    'settings' => array(),
+    'foreign keys' => array(
+      'format' => array(
+        'table' => 'filter_format',
+        'columns' => array(
+          'format' => 'format',
+        ),
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'field_name' => 'body',
+    'type' => 'text_with_summary',
+    'module' => 'text',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '1',
+    'deleted' => '0',
+  );
+
   $fields['field_name'] = array(
     'translatable' => '0',
     'entity_types' => array(),
@@ -247,92 +336,34 @@ function custom_config_drush_ctex_bonus_fields() {
     'deleted' => '0',
   );
 
-  $fields['taxonomy_forums'] = array(
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'forums',
-          'parent' => 0,
-        ),
-      ),
-    ),
+  $fields['field_attachments'] = array(
+    'translatable' => '0',
     'entity_types' => array(),
-    'translatable' => '0',
+    'settings' => array(
+      'display_field' => 0,
+      'display_default' => 0,
+      'uri_scheme' => 'public',
+      'profile2_private' => FALSE,
+    ),
     'foreign keys' => array(
-      'tid' => array(
-        'table' => 'taxonomy_term_data',
+      'fid' => array(
+        'table' => 'file_managed',
         'columns' => array(
-          'tid' => 'tid',
+          'fid' => 'fid',
         ),
       ),
     ),
     'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
+      'fid' => array(
+        0 => 'fid',
       ),
     ),
-    'field_name' => 'taxonomy_forums',
-    'type' => 'taxonomy_term_reference',
-    'module' => 'taxonomy',
+    'field_name' => 'field_attachments',
+    'type' => 'file',
+    'module' => 'file',
     'active' => '1',
     'locked' => '0',
-    'cardinality' => '1',
-    'deleted' => '0',
-  );
-
-  $fields['comment_body'] = array(
-    'entity_types' => array(
-      0 => 'comment',
-    ),
-    'translatable' => '0',
-    'settings' => array(),
-    'foreign keys' => array(
-      'format' => array(
-        'table' => 'filter_format',
-        'columns' => array(
-          'format' => 'format',
-        ),
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'field_name' => 'comment_body',
-    'type' => 'text_long',
-    'module' => 'text',
-    'active' => '1',
-    'locked' => '0',
-    'cardinality' => '1',
-    'deleted' => '0',
-  );
-
-  $fields['body'] = array(
-    'entity_types' => array(
-      0 => 'node',
-    ),
-    'translatable' => '0',
-    'settings' => array(),
-    'foreign keys' => array(
-      'format' => array(
-        'table' => 'filter_format',
-        'columns' => array(
-          'format' => 'format',
-        ),
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'field_name' => 'body',
-    'type' => 'text_with_summary',
-    'module' => 'text',
-    'active' => '1',
-    'locked' => '0',
-    'cardinality' => '1',
+    'cardinality' => '10',
     'deleted' => '0',
   );
 
@@ -344,6 +375,233 @@ function custom_config_drush_ctex_bonus_fields() {
  */
 function custom_config_drush_ctex_bonus_instances() {
   $instances = array();
+
+  $instances['node:forum:taxonomy_forums'] = array(
+    'label' => 'Forums',
+    'required' => TRUE,
+    'widget' => array(
+      'type' => 'options_select',
+      'settings' => array(),
+      'weight' => 0,
+      'module' => 'options',
+    ),
+    'display' => array(
+      'default' => array(
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
+        'label' => 'above',
+        'settings' => array(),
+        'module' => 'taxonomy',
+      ),
+      'teaser' => array(
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
+        'label' => 'above',
+        'settings' => array(),
+        'module' => 'taxonomy',
+      ),
+    ),
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'description' => '',
+    'field_name' => 'taxonomy_forums',
+    'entity_type' => 'node',
+    'bundle' => 'forum',
+    'deleted' => '0',
+    'default_value' => NULL,
+  );
+
+  $instances['node:forum:body'] = array(
+    'label' => 'Body',
+    'widget' => array(
+      'type' => 'text_textarea_with_summary',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'weight' => 1,
+      'module' => 'text',
+    ),
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'settings' => array(),
+        'module' => 'text',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'type' => 'text_summary_or_trimmed',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'module' => 'text',
+        'weight' => 11,
+      ),
+    ),
+    'required' => FALSE,
+    'description' => '',
+    'field_name' => 'body',
+    'entity_type' => 'node',
+    'bundle' => 'forum',
+    'deleted' => '0',
+    'default_value' => NULL,
+  );
+
+  $instances['node:page:body'] = array(
+    'label' => 'Body',
+    'widget' => array(
+      'type' => 'text_textarea_with_summary',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'weight' => '-4',
+      'module' => 'text',
+    ),
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => '0',
+        'settings' => array(),
+        'module' => 'text',
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'type' => 'text_summary_or_trimmed',
+        'weight' => '0',
+        'settings' => array(
+          'trim_length' => '300',
+        ),
+        'module' => 'text',
+      ),
+    ),
+    'required' => FALSE,
+    'description' => '',
+    'field_name' => 'body',
+    'entity_type' => 'node',
+    'bundle' => 'page',
+    'deleted' => '0',
+    'default_value' => NULL,
+  );
+
+  $instances['node:page:field_attachments'] = array(
+    'label' => 'Attachments',
+    'widget' => array(
+      'weight' => '-3',
+      'type' => 'file_generic',
+      'module' => 'file',
+      'active' => 1,
+      'settings' => array(
+        'progress_indicator' => 'bar',
+      ),
+    ),
+    'settings' => array(
+      'file_directory' => 'attachments/page',
+      'file_extensions' => 'odt odf doc docx zip tar gz bz2 jpg jpeg png gif txt xls ods xlsx odp ppt pdf pptx',
+      'max_filesize' => '',
+      'description_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'file_table',
+        'weight' => '1',
+        'settings' => array(),
+        'module' => 'file',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'hidden',
+        'weight' => '0',
+        'settings' => array(),
+      ),
+    ),
+    'required' => 0,
+    'description' => 'Attachments for the current page',
+    'field_name' => 'field_attachments',
+    'entity_type' => 'node',
+    'bundle' => 'page',
+    'deleted' => '0',
+  );
+
+  $instances['comment:comment_node_forum:comment_body'] = array(
+    'label' => 'Comment',
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'required' => TRUE,
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+        'settings' => array(),
+        'module' => 'text',
+      ),
+    ),
+    'widget' => array(
+      'type' => 'text_textarea',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'weight' => 0,
+      'module' => 'text',
+    ),
+    'description' => '',
+    'field_name' => 'comment_body',
+    'entity_type' => 'comment',
+    'bundle' => 'comment_node_forum',
+    'deleted' => '0',
+    'default_value' => NULL,
+  );
+
+  $instances['comment:comment_node_page:comment_body'] = array(
+    'label' => 'Comment',
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'required' => TRUE,
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+        'settings' => array(),
+        'module' => 'text',
+      ),
+    ),
+    'widget' => array(
+      'type' => 'text_textarea',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'weight' => 0,
+      'module' => 'text',
+    ),
+    'description' => '',
+    'field_name' => 'comment_body',
+    'entity_type' => 'comment',
+    'bundle' => 'comment_node_page',
+    'deleted' => '0',
+    'default_value' => NULL,
+  );
 
   $instances['profile2:main:field_name'] = array(
     'label' => 'Name',
@@ -647,117 +905,6 @@ function custom_config_drush_ctex_bonus_instances() {
     'entity_type' => 'profile2',
     'bundle' => 'main',
     'deleted' => '0',
-  );
-
-  $instances['comment:comment_node_forum:comment_body'] = array(
-    'label' => 'Comment',
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'required' => TRUE,
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'type' => 'text_default',
-        'weight' => 0,
-        'settings' => array(),
-        'module' => 'text',
-      ),
-    ),
-    'widget' => array(
-      'type' => 'text_textarea',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'weight' => 0,
-      'module' => 'text',
-    ),
-    'description' => '',
-    'field_name' => 'comment_body',
-    'entity_type' => 'comment',
-    'bundle' => 'comment_node_forum',
-    'deleted' => '0',
-    'default_value' => NULL,
-  );
-
-  $instances['node:forum:taxonomy_forums'] = array(
-    'label' => 'Forums',
-    'required' => TRUE,
-    'widget' => array(
-      'type' => 'options_select',
-      'settings' => array(),
-      'weight' => 0,
-      'module' => 'options',
-    ),
-    'display' => array(
-      'default' => array(
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
-        'label' => 'above',
-        'settings' => array(),
-        'module' => 'taxonomy',
-      ),
-      'teaser' => array(
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
-        'label' => 'above',
-        'settings' => array(),
-        'module' => 'taxonomy',
-      ),
-    ),
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'description' => '',
-    'field_name' => 'taxonomy_forums',
-    'entity_type' => 'node',
-    'bundle' => 'forum',
-    'deleted' => '0',
-    'default_value' => NULL,
-  );
-
-  $instances['node:forum:body'] = array(
-    'label' => 'Body',
-    'widget' => array(
-      'type' => 'text_textarea_with_summary',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'weight' => 1,
-      'module' => 'text',
-    ),
-    'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'type' => 'text_default',
-        'settings' => array(),
-        'module' => 'text',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'type' => 'text_summary_or_trimmed',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'module' => 'text',
-        'weight' => 11,
-      ),
-    ),
-    'required' => FALSE,
-    'description' => '',
-    'field_name' => 'body',
-    'entity_type' => 'node',
-    'bundle' => 'forum',
-    'deleted' => '0',
-    'default_value' => NULL,
   );
 
   return $instances;

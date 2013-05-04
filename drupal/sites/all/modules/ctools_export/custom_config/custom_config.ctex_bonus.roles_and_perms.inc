@@ -17,6 +17,8 @@ function custom_config_drush_ctex_bonus_roles_and_perms() {
     'weight' => '0',
     'permissions' => array(
       'access content' => TRUE,
+      'access user profiles' => TRUE,
+      'view any main profile' => TRUE,
     ),
   );
 
@@ -38,6 +40,7 @@ function custom_config_drush_ctex_bonus_roles_and_perms() {
       'search content' => TRUE,
       'skip comment approval' => TRUE,
       'use text format minimal' => TRUE,
+      'view any main profile' => TRUE,
       'view own main profile' => TRUE,
       'view own unpublished content' => TRUE,
       'view revisions' => TRUE,

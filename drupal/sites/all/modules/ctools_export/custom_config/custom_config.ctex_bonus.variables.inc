@@ -12,6 +12,8 @@
 function custom_config_drush_ctex_bonus_variables() {
   $variables = array();
 
+  $variables['additional_settings__active_tab_page'] = 'edit-display';
+
   $variables['admin_theme'] = 'seven';
 
   $variables['advanced_forum_add_local_task'] = 1;
@@ -50,6 +52,20 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['clean_url'] = '1';
 
+  $variables['comment_anonymous_page'] = 0;
+
+  $variables['comment_default_mode_page'] = 1;
+
+  $variables['comment_default_per_page_page'] = '50';
+
+  $variables['comment_form_location_page'] = 1;
+
+  $variables['comment_page'] = '1';
+
+  $variables['comment_preview_page'] = '1';
+
+  $variables['comment_subject_field_page'] = 1;
+
   $variables['contact_default_status'] = 0;
 
   $variables['cron_key'] = 'Ie1oRn1ZhuuUsPrUmX0rJMg-d1bO9qSlXr_sT-6MipI';
@@ -61,6 +77,34 @@ function custom_config_drush_ctex_bonus_variables() {
   $variables['drupal_private_key'] = 'gYRrdsBeKPKJ1egy3Ns5zEmsXT7P-hXOq475ankyi-U';
 
   $variables['email__active_tab'] = 'edit-email-admin-created';
+
+  $variables['field_bundle_settings_node__page'] = array(
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '-5',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
 
   $variables['field_bundle_settings_profile2__main'] = array(
     'view_modes' => array(),
@@ -115,11 +159,28 @@ function custom_config_drush_ctex_bonus_variables() {
     33 => 1,
   );
 
+  $variables['menu_options_page'] = array(
+    0 => 'main-menu',
+  );
+
+  $variables['menu_parent_page'] = 'main-menu:0';
+
   $variables['node_admin_theme'] = 1;
 
   $variables['node_options_forum'] = array(
     0 => 'status',
   );
+
+  $variables['node_options_page'] = array(
+    0 => 'status',
+    1 => 'revision',
+  );
+
+  $variables['node_preview_page'] = '1';
+
+  $variables['node_submitted_page'] = 0;
+
+  $variables['save_continue_page'] = 'Save and add fields';
 
   $variables['site_default_country'] = 'IN';
 

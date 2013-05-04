@@ -8,6 +8,7 @@ dependencies[] = block
 dependencies[] = comment
 dependencies[] = contact
 dependencies[] = entity
+dependencies[] = file
 dependencies[] = filter
 dependencies[] = forum
 dependencies[] = image

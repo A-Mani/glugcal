@@ -18,6 +18,7 @@ function custom_config_drush_ctex_bonus_info_dependencies() {
     'comment',
     'contact',
     'entity',
+    'file',
     'filter',
     'forum',
     'image',

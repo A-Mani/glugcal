@@ -12,5 +12,22 @@
 function custom_config_drush_ctex_bonus_ctypes() {
   $ctypes = array();
 
+  $ctypes['page'] = array(
+    'type' => 'page',
+    'name' => 'Page',
+    'base' => 'node_content',
+    'module' => 'node',
+    'description' => 'Add a static page whose contents are not frequently updated, e.g. About',
+    'help' => '',
+    'has_title' => '1',
+    'title_label' => 'Title',
+    'custom' => '1',
+    'modified' => '1',
+    'locked' => '0',
+    'disabled' => '0',
+    'orig_type' => 'page',
+    'disabled_changed' => FALSE,
+  );
+
   return $ctypes;
 }
