@@ -13,6 +13,8 @@
  */
 function custom_config_drush_ctex_bonus_info_dependencies() {
   return array(
+    'admin_menu',
+    'admin_menu_toolbar',
     'advanced_forum',
     'block',
     'comment',
@@ -21,21 +23,38 @@ function custom_config_drush_ctex_bonus_info_dependencies() {
     'file',
     'filter',
     'forum',
+    'freelinking',
+    'geshifilter',
     'image',
+    'libraries',
     'list',
+    'markdown',
     'menu',
     'node',
+    'node_export',
     'number',
     'openid',
     'options',
     'path',
+    'pathauto',
     'profile2',
+    'rdf',
     'search',
+    'system',
     'taxonomy',
     'text',
     'url',
     'user',
-    'views'
+    'uuid',
+    'uuid_path',
+    'views',
+    'wikitools',
+    'xmlsitemap',
+    'xmlsitemap_custom',
+    'xmlsitemap_menu',
+    'xmlsitemap_node',
+    'xmlsitemap_taxonomy',
+    'xmlsitemap_user'
   );
 }
 

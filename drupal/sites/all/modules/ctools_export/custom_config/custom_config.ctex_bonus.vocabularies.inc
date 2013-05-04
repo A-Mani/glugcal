@@ -16,9 +16,57 @@ function custom_config_drush_ctex_bonus_vocabularies() {
     'name' => 'Forums',
     'machine_name' => 'forums',
     'description' => 'Forum navigation vocabulary',
-    'hierarchy' => '1',
+    'hierarchy' => '0',
     'module' => 'forum',
     'weight' => '-10',
+    'rdf_mapping' => array(
+      'rdftype' => array(
+        0 => 'skos:ConceptScheme',
+      ),
+      'name' => array(
+        'predicates' => array(
+          0 => 'dc:title',
+        ),
+      ),
+      'description' => array(
+        'predicates' => array(
+          0 => 'rdfs:comment',
+        ),
+      ),
+    ),
+  );
+
+  $vocabularies['categories'] = array(
+    'name' => 'Categories',
+    'machine_name' => 'categories',
+    'description' => 'Content categories on the site',
+    'hierarchy' => '0',
+    'module' => 'taxonomy',
+    'weight' => '0',
+    'rdf_mapping' => array(
+      'rdftype' => array(
+        0 => 'skos:ConceptScheme',
+      ),
+      'name' => array(
+        'predicates' => array(
+          0 => 'dc:title',
+        ),
+      ),
+      'description' => array(
+        'predicates' => array(
+          0 => 'rdfs:comment',
+        ),
+      ),
+    ),
+  );
+
+  $vocabularies['tags'] = array(
+    'name' => 'Tags',
+    'machine_name' => 'tags',
+    'description' => 'Tags for all type of content on the site.',
+    'hierarchy' => '0',
+    'module' => 'taxonomy',
+    'weight' => '0',
     'rdf_mapping' => array(
       'rdftype' => array(
         0 => 'skos:ConceptScheme',

@@ -12,7 +12,9 @@
 function custom_config_drush_ctex_bonus_variables() {
   $variables = array();
 
-  $variables['additional_settings__active_tab_page'] = 'edit-display';
+  $variables['additional_settings__active_tab_page'] = 'edit-xmlsitemap';
+
+  $variables['additional_settings__active_tab_wiki_page'] = 'edit-xmlsitemap';
 
   $variables['admin_theme'] = 'seven';
 
@@ -54,17 +56,31 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['comment_anonymous_page'] = 0;
 
+  $variables['comment_anonymous_wiki_page'] = 0;
+
   $variables['comment_default_mode_page'] = 1;
+
+  $variables['comment_default_mode_wiki_page'] = 1;
 
   $variables['comment_default_per_page_page'] = '50';
 
+  $variables['comment_default_per_page_wiki_page'] = '50';
+
   $variables['comment_form_location_page'] = 1;
+
+  $variables['comment_form_location_wiki_page'] = 1;
 
   $variables['comment_page'] = '1';
 
   $variables['comment_preview_page'] = '1';
 
+  $variables['comment_preview_wiki_page'] = '1';
+
   $variables['comment_subject_field_page'] = 1;
+
+  $variables['comment_subject_field_wiki_page'] = 1;
+
+  $variables['comment_wiki_page'] = '1';
 
   $variables['contact_default_status'] = 0;
 
@@ -77,6 +93,24 @@ function custom_config_drush_ctex_bonus_variables() {
   $variables['drupal_private_key'] = 'gYRrdsBeKPKJ1egy3Ns5zEmsXT7P-hXOq475ankyi-U';
 
   $variables['email__active_tab'] = 'edit-email-admin-created';
+
+  $variables['field_bundle_settings_node__forum'] = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
 
   $variables['field_bundle_settings_node__page'] = array(
     'view_modes' => array(
@@ -101,6 +135,30 @@ function custom_config_drush_ctex_bonus_variables() {
         'title' => array(
           'weight' => '-5',
         ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+
+  $variables['field_bundle_settings_node__wiki_page'] = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),
@@ -118,7 +176,1857 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['filter_fallback_format'] = 'plain_text';
 
+  $variables['forum_containers'] = array();
+
   $variables['forum_nav_vocabulary'] = '1';
+
+  $variables['freelinking_cache'] = 0;
+
+  $variables['freelinking_default'] = 'path';
+
+  $variables['freelinking_drupalorgnid_http_request'] = 0;
+
+  $variables['freelinking_file_file_path'] = 'public://wiki';
+
+  $variables['freelinking_match_syntax'] = 'double_bracket';
+
+  $variables['freelinking_nodetitle_failover'] = 'search';
+
+  $variables['freelinking_nodetitle_searchcontenttype'] = 'wiki_page';
+
+  $variables['freelinking_path_basepath'] = 'wiki';
+
+  $variables['freelinking_path_failover'] = 'createnode';
+
+  $variables['freelinking_search_failover'] = 'error';
+
+  $variables['freelinking_showtext_failover'] = 'error';
+
+  $variables['freelinking_wikipedia_languagecode'] = 'en';
+
+  $variables['geshifilter_available_languages_cache'] = array(
+    '4cs' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'GADV 4CS',
+    ),
+    '6502acme' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'MOS 6502 (6510) ACME Cross Assembler format',
+    ),
+    '6502kickass' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'MOS 6502 (6510) Kick Assembler format',
+    ),
+    '6502tasm' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'MOS 6502 (6510) TASM/64TASS 1.46 Assembler format',
+    ),
+    '68000devpac' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Motorola 68000 - HiSoft Devpac ST 2 Assembler format',
+    ),
+    'abap' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ABAP',
+    ),
+    'actionscript' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ActionScript',
+    ),
+    'actionscript3' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ActionScript 3',
+    ),
+    'ada' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Ada',
+    ),
+    'algol68' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ALGOL 68',
+    ),
+    'apache' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Apache configuration',
+    ),
+    'applescript' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'AppleScript',
+    ),
+    'apt_sources' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Apt sources',
+    ),
+    'arm' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ARM ASSEMBLER',
+    ),
+    'asm' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ASM',
+    ),
+    'asp' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ASP',
+    ),
+    'asymptote' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'asymptote',
+    ),
+    'autoconf' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Autoconf',
+    ),
+    'autohotkey' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Autohotkey',
+    ),
+    'autoit' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'AutoIt',
+    ),
+    'avisynth' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'AviSynth',
+    ),
+    'awk' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'awk',
+    ),
+    'bascomavr' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'BASCOM AVR',
+    ),
+    'bash' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Bash',
+    ),
+    'basic4gl' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Basic4GL',
+    ),
+    'bf' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Brainfuck',
+    ),
+    'bibtex' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'BibTeX',
+    ),
+    'blitzbasic' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'BlitzBasic',
+    ),
+    'bnf' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'bnf',
+    ),
+    'boo' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Boo',
+    ),
+    'c' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'C',
+    ),
+    'c_loadrunner' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'C (LoadRunner)',
+    ),
+    'c_mac' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'C (Mac)',
+    ),
+    'caddcl' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'CAD DCL',
+    ),
+    'cadlisp' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'CAD Lisp',
+    ),
+    'cfdg' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'CFDG',
+    ),
+    'cfm' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ColdFusion',
+    ),
+    'chaiscript' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ChaiScript',
+    ),
+    'cil' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'CIL',
+    ),
+    'clojure' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Clojure',
+    ),
+    'cmake' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'CMake',
+    ),
+    'cobol' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'COBOL',
+    ),
+    'coffeescript' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'CoffeeScript',
+    ),
+    'cpp' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'C++',
+    ),
+    'cpp-qt' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'C++ (Qt)',
+    ),
+    'csharp' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'C#',
+    ),
+    'css' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'CSS',
+    ),
+    'cuesheet' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Cuesheet',
+    ),
+    'd' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'D',
+    ),
+    'dcl' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'DCL',
+    ),
+    'dcpu16' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'DCPU-16 Assembly',
+    ),
+    'dcs' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'DCS',
+    ),
+    'delphi' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Delphi',
+    ),
+    'diff' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Diff',
+    ),
+    'div' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'DIV',
+    ),
+    'dos' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'DOS',
+    ),
+    'dot' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'dot',
+    ),
+    'drupal5' => array(
+      'language_path' => 'sites/all/modules/geshifilter/geshi-extra',
+      'fullname' => 'Drupal 5',
+    ),
+    'drupal6' => array(
+      'language_path' => 'sites/all/modules/geshifilter/geshi-extra',
+      'fullname' => 'Drupal 6',
+    ),
+    'e' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'E',
+    ),
+    'ecmascript' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ECMAScript',
+    ),
+    'eiffel' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Eiffel',
+    ),
+    'email' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'eMail (mbox)',
+    ),
+    'epc' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'EPC',
+    ),
+    'erlang' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Erlang',
+    ),
+    'euphoria' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Euphoria',
+    ),
+    'f1' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Formula One',
+    ),
+    'falcon' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Falcon',
+    ),
+    'fo' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'FO (abas-ERP)',
+    ),
+    'fortran' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Fortran',
+    ),
+    'freebasic' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'FreeBasic',
+    ),
+    'freeswitch' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'FreeSWITCH',
+    ),
+    'fsharp' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'F#',
+    ),
+    'gambas' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'GAMBAS',
+    ),
+    'gdb' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'GDB',
+    ),
+    'genero' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'genero',
+    ),
+    'genie' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Genie',
+    ),
+    'gettext' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'GNU Gettext',
+    ),
+    'glsl' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'glSlang',
+    ),
+    'gml' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'GML',
+    ),
+    'gnuplot' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Gnuplot',
+    ),
+    'go' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Go',
+    ),
+    'groovy' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Groovy',
+    ),
+    'gwbasic' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'GwBasic',
+    ),
+    'haskell' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Haskell',
+    ),
+    'haxe' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Haxe',
+    ),
+    'hicest' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'HicEst',
+    ),
+    'hq9plus' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'HQ9+',
+    ),
+    'html4strict' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'HTML',
+    ),
+    'html5' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'HTML5',
+    ),
+    'icon' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Icon',
+    ),
+    'idl' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Uno Idl',
+    ),
+    'ini' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'INI',
+    ),
+    'inno' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Inno',
+    ),
+    'intercal' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'INTERCAL',
+    ),
+    'io' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Io',
+    ),
+    'j' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'J',
+    ),
+    'java' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Java',
+    ),
+    'java5' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Java(TM) 2 Platform Standard Edition 5.0',
+    ),
+    'javascript' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Javascript',
+    ),
+    'jquery' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'jQuery',
+    ),
+    'kixtart' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'KiXtart',
+    ),
+    'klonec' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'KLone C',
+    ),
+    'klonecpp' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'KLone C++',
+    ),
+    'latex' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'LaTeX',
+    ),
+    'lb' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Liberty BASIC',
+    ),
+    'ldif' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'LDIF',
+    ),
+    'lisp' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Lisp',
+    ),
+    'llvm' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'LLVM Intermediate Representation',
+    ),
+    'locobasic' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Locomotive Basic',
+    ),
+    'logtalk' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Logtalk',
+    ),
+    'lolcode' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'LOLcode',
+    ),
+    'lotusformulas' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Lotus Notes @Formulas',
+    ),
+    'lotusscript' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'LotusScript',
+    ),
+    'lscript' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'LScript',
+    ),
+    'lsl2' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'LSL2',
+    ),
+    'lua' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Lua',
+    ),
+    'm68k' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Motorola 68000 Assembler',
+    ),
+    'magiksf' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'MagikSF',
+    ),
+    'make' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'GNU make',
+    ),
+    'mapbasic' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'MapBasic',
+    ),
+    'matlab' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Matlab M',
+    ),
+    'mirc' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'mIRC Scripting',
+    ),
+    'mmix' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'MMIX',
+    ),
+    'modula2' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Modula-2',
+    ),
+    'modula3' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Modula-3',
+    ),
+    'mpasm' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Microchip Assembler',
+    ),
+    'mxml' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'MXML',
+    ),
+    'mysql' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'MySQL',
+    ),
+    'nagios' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Nagios',
+    ),
+    'netrexx' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'NetRexx',
+    ),
+    'newlisp' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'newlisp',
+    ),
+    'nsis' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'NSIS',
+    ),
+    'oberon2' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Oberon-2',
+    ),
+    'objc' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Objective-C',
+    ),
+    'objeck' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Objeck Programming Language',
+    ),
+    'ocaml' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'OCaml',
+    ),
+    'ocaml-brief' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'OCaml (brief)',
+    ),
+    'octave' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'GNU Octave',
+    ),
+    'oobas' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'OpenOffice.org Basic',
+    ),
+    'oorexx' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ooRexx',
+    ),
+    'oracle11' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Oracle 11 SQL',
+    ),
+    'oracle8' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Oracle 8 SQL',
+    ),
+    'oxygene' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Oxygene (Delphi Prism)',
+    ),
+    'oz' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'OZ',
+    ),
+    'parasail' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ParaSail',
+    ),
+    'parigp' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PARI/GP',
+    ),
+    'pascal' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Pascal',
+    ),
+    'pcre' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PCRE',
+    ),
+    'per' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'per',
+    ),
+    'perl' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Perl',
+    ),
+    'perl6' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Perl 6',
+    ),
+    'pf' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'OpenBSD Packet Filter',
+    ),
+    'php' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PHP',
+    ),
+    'php-brief' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PHP (brief)',
+    ),
+    'pic16' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PIC16',
+    ),
+    'pike' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Pike',
+    ),
+    'pixelbender' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Pixel Bender 1.0',
+    ),
+    'pli' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PL/I',
+    ),
+    'plsql' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PL/SQL',
+    ),
+    'postgresql' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PostgreSQL',
+    ),
+    'povray' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'POVRAY',
+    ),
+    'powerbuilder' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PowerBuilder',
+    ),
+    'powershell' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PowerShell',
+    ),
+    'proftpd' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ProFTPd configuration',
+    ),
+    'progress' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Progress',
+    ),
+    'prolog' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Prolog',
+    ),
+    'properties' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PROPERTIES',
+    ),
+    'providex' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ProvideX',
+    ),
+    'purebasic' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'PureBasic',
+    ),
+    'pycon' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Python (console mode)',
+    ),
+    'pys60' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Python for S60',
+    ),
+    'python' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Python',
+    ),
+    'q' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'q/kdb+',
+    ),
+    'qbasic' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'QBasic/QuickBASIC',
+    ),
+    'rails' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Rails',
+    ),
+    'rebol' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'REBOL',
+    ),
+    'reg' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Microsoft Registry',
+    ),
+    'rexx' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'rexx',
+    ),
+    'robots' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'robots.txt',
+    ),
+    'rpmspec' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'RPM Specification File',
+    ),
+    'rsplus' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'R / S+',
+    ),
+    'ruby' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Ruby',
+    ),
+    'sas' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'SAS',
+    ),
+    'scala' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Scala',
+    ),
+    'scheme' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Scheme',
+    ),
+    'scilab' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'SciLab',
+    ),
+    'sdlbasic' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'sdlBasic',
+    ),
+    'smalltalk' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Smalltalk',
+    ),
+    'smarty' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Smarty',
+    ),
+    'spark' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'SPARK',
+    ),
+    'sparql' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'SPARQL',
+    ),
+    'sql' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'SQL',
+    ),
+    'stonescript' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'StoneScript',
+    ),
+    'systemverilog' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'SystemVerilog',
+    ),
+    'tcl' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'TCL',
+    ),
+    'teraterm' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Tera Term Macro',
+    ),
+    'text' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Text',
+    ),
+    'thinbasic' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'thinBasic',
+    ),
+    'tsql' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'T-SQL',
+    ),
+    'typoscript' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'TypoScript',
+    ),
+    'unicon' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Unicon (Unified Extended Dialect of Icon)',
+    ),
+    'upc' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'UPC',
+    ),
+    'urbi' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Urbi',
+    ),
+    'uscript' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Unreal Script',
+    ),
+    'vala' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Vala',
+    ),
+    'vb' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Visual Basic',
+    ),
+    'vbnet' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'vb.net',
+    ),
+    'vedit' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Vedit macro language',
+    ),
+    'verilog' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Verilog',
+    ),
+    'vhdl' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'VHDL',
+    ),
+    'vim' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Vim Script',
+    ),
+    'visualfoxpro' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Visual Fox Pro',
+    ),
+    'visualprolog' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Visual Prolog',
+    ),
+    'whitespace' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Whitespace',
+    ),
+    'whois' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Whois (RPSL format)',
+    ),
+    'winbatch' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Winbatch',
+    ),
+    'xbasic' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'XBasic',
+    ),
+    'xml' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'XML',
+    ),
+    'xorg_conf' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'Xorg configuration',
+    ),
+    'xpp' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'X++',
+    ),
+    'yaml' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'YAML',
+    ),
+    'z80' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ZiLOG Z80 Assembler',
+    ),
+    'zxbasic' => array(
+      'language_path' => 'sites/all/libraries/geshi/geshi',
+      'fullname' => 'ZXBasic',
+    ),
+  );
+
+  $variables['geshifilter_code_container'] = '3';
+
+  $variables['geshifilter_css_mode'] = '1';
+
+  $variables['geshifilter_default_highlighting'] = 'GESHIFILTER_DEFAULT_PLAINTEXT';
+
+  $variables['geshifilter_default_line_numbering'] = '1';
+
+  $variables['geshifilter_enable_keyword_urls'] = 0;
+
+  $variables['geshifilter_format_specific_options'] = 0;
+
+  $variables['geshifilter_language_enabled_4cs'] = 0;
+
+  $variables['geshifilter_language_enabled_6502acme'] = 0;
+
+  $variables['geshifilter_language_enabled_6502kickass'] = 0;
+
+  $variables['geshifilter_language_enabled_6502tasm'] = 0;
+
+  $variables['geshifilter_language_enabled_68000devpac'] = 0;
+
+  $variables['geshifilter_language_enabled_abap'] = 0;
+
+  $variables['geshifilter_language_enabled_actionscript'] = 0;
+
+  $variables['geshifilter_language_enabled_actionscript3'] = 0;
+
+  $variables['geshifilter_language_enabled_ada'] = 0;
+
+  $variables['geshifilter_language_enabled_algol68'] = 0;
+
+  $variables['geshifilter_language_enabled_apache'] = 0;
+
+  $variables['geshifilter_language_enabled_applescript'] = 0;
+
+  $variables['geshifilter_language_enabled_apt_sources'] = 0;
+
+  $variables['geshifilter_language_enabled_arm'] = 0;
+
+  $variables['geshifilter_language_enabled_asm'] = 0;
+
+  $variables['geshifilter_language_enabled_asp'] = 0;
+
+  $variables['geshifilter_language_enabled_asymptote'] = 0;
+
+  $variables['geshifilter_language_enabled_autoconf'] = 0;
+
+  $variables['geshifilter_language_enabled_autohotkey'] = 0;
+
+  $variables['geshifilter_language_enabled_autoit'] = 0;
+
+  $variables['geshifilter_language_enabled_avisynth'] = 0;
+
+  $variables['geshifilter_language_enabled_awk'] = 0;
+
+  $variables['geshifilter_language_enabled_bascomavr'] = 0;
+
+  $variables['geshifilter_language_enabled_bash'] = 0;
+
+  $variables['geshifilter_language_enabled_basic4gl'] = 0;
+
+  $variables['geshifilter_language_enabled_bf'] = 0;
+
+  $variables['geshifilter_language_enabled_bibtex'] = 0;
+
+  $variables['geshifilter_language_enabled_blitzbasic'] = 0;
+
+  $variables['geshifilter_language_enabled_bnf'] = 0;
+
+  $variables['geshifilter_language_enabled_boo'] = 0;
+
+  $variables['geshifilter_language_enabled_c'] = 1;
+
+  $variables['geshifilter_language_enabled_caddcl'] = 0;
+
+  $variables['geshifilter_language_enabled_cadlisp'] = 0;
+
+  $variables['geshifilter_language_enabled_cfdg'] = 0;
+
+  $variables['geshifilter_language_enabled_cfm'] = 0;
+
+  $variables['geshifilter_language_enabled_chaiscript'] = 0;
+
+  $variables['geshifilter_language_enabled_cil'] = 0;
+
+  $variables['geshifilter_language_enabled_clojure'] = 1;
+
+  $variables['geshifilter_language_enabled_cmake'] = 0;
+
+  $variables['geshifilter_language_enabled_cobol'] = 0;
+
+  $variables['geshifilter_language_enabled_coffeescript'] = 1;
+
+  $variables['geshifilter_language_enabled_cpp'] = 1;
+
+  $variables['geshifilter_language_enabled_cpp-qt'] = 0;
+
+  $variables['geshifilter_language_enabled_csharp'] = 0;
+
+  $variables['geshifilter_language_enabled_css'] = 1;
+
+  $variables['geshifilter_language_enabled_cuesheet'] = 0;
+
+  $variables['geshifilter_language_enabled_c_loadrunner'] = 0;
+
+  $variables['geshifilter_language_enabled_c_mac'] = 0;
+
+  $variables['geshifilter_language_enabled_d'] = 0;
+
+  $variables['geshifilter_language_enabled_dcl'] = 0;
+
+  $variables['geshifilter_language_enabled_dcpu16'] = 0;
+
+  $variables['geshifilter_language_enabled_dcs'] = 0;
+
+  $variables['geshifilter_language_enabled_delphi'] = 0;
+
+  $variables['geshifilter_language_enabled_diff'] = 0;
+
+  $variables['geshifilter_language_enabled_div'] = 0;
+
+  $variables['geshifilter_language_enabled_dos'] = 0;
+
+  $variables['geshifilter_language_enabled_dot'] = 0;
+
+  $variables['geshifilter_language_enabled_drupal5'] = 0;
+
+  $variables['geshifilter_language_enabled_drupal6'] = 0;
+
+  $variables['geshifilter_language_enabled_e'] = 0;
+
+  $variables['geshifilter_language_enabled_ecmascript'] = 0;
+
+  $variables['geshifilter_language_enabled_eiffel'] = 0;
+
+  $variables['geshifilter_language_enabled_email'] = 0;
+
+  $variables['geshifilter_language_enabled_epc'] = 0;
+
+  $variables['geshifilter_language_enabled_erlang'] = 1;
+
+  $variables['geshifilter_language_enabled_euphoria'] = 0;
+
+  $variables['geshifilter_language_enabled_f1'] = 0;
+
+  $variables['geshifilter_language_enabled_falcon'] = 0;
+
+  $variables['geshifilter_language_enabled_fo'] = 0;
+
+  $variables['geshifilter_language_enabled_fortran'] = 0;
+
+  $variables['geshifilter_language_enabled_freebasic'] = 0;
+
+  $variables['geshifilter_language_enabled_freeswitch'] = 0;
+
+  $variables['geshifilter_language_enabled_fsharp'] = 0;
+
+  $variables['geshifilter_language_enabled_gambas'] = 0;
+
+  $variables['geshifilter_language_enabled_gdb'] = 0;
+
+  $variables['geshifilter_language_enabled_genero'] = 0;
+
+  $variables['geshifilter_language_enabled_genie'] = 0;
+
+  $variables['geshifilter_language_enabled_gettext'] = 0;
+
+  $variables['geshifilter_language_enabled_glsl'] = 0;
+
+  $variables['geshifilter_language_enabled_gml'] = 0;
+
+  $variables['geshifilter_language_enabled_gnuplot'] = 0;
+
+  $variables['geshifilter_language_enabled_go'] = 0;
+
+  $variables['geshifilter_language_enabled_groovy'] = 0;
+
+  $variables['geshifilter_language_enabled_gwbasic'] = 0;
+
+  $variables['geshifilter_language_enabled_haskell'] = 1;
+
+  $variables['geshifilter_language_enabled_haxe'] = 0;
+
+  $variables['geshifilter_language_enabled_hicest'] = 0;
+
+  $variables['geshifilter_language_enabled_hq9plus'] = 0;
+
+  $variables['geshifilter_language_enabled_html4strict'] = 1;
+
+  $variables['geshifilter_language_enabled_html5'] = 1;
+
+  $variables['geshifilter_language_enabled_icon'] = 0;
+
+  $variables['geshifilter_language_enabled_idl'] = 0;
+
+  $variables['geshifilter_language_enabled_ini'] = 0;
+
+  $variables['geshifilter_language_enabled_inno'] = 0;
+
+  $variables['geshifilter_language_enabled_intercal'] = 0;
+
+  $variables['geshifilter_language_enabled_io'] = 0;
+
+  $variables['geshifilter_language_enabled_j'] = 0;
+
+  $variables['geshifilter_language_enabled_java'] = 1;
+
+  $variables['geshifilter_language_enabled_java5'] = 0;
+
+  $variables['geshifilter_language_enabled_javascript'] = 1;
+
+  $variables['geshifilter_language_enabled_jquery'] = 0;
+
+  $variables['geshifilter_language_enabled_kixtart'] = 0;
+
+  $variables['geshifilter_language_enabled_klonec'] = 0;
+
+  $variables['geshifilter_language_enabled_klonecpp'] = 0;
+
+  $variables['geshifilter_language_enabled_latex'] = 1;
+
+  $variables['geshifilter_language_enabled_lb'] = 0;
+
+  $variables['geshifilter_language_enabled_ldif'] = 0;
+
+  $variables['geshifilter_language_enabled_lisp'] = 0;
+
+  $variables['geshifilter_language_enabled_llvm'] = 0;
+
+  $variables['geshifilter_language_enabled_locobasic'] = 0;
+
+  $variables['geshifilter_language_enabled_logtalk'] = 0;
+
+  $variables['geshifilter_language_enabled_lolcode'] = 0;
+
+  $variables['geshifilter_language_enabled_lotusformulas'] = 0;
+
+  $variables['geshifilter_language_enabled_lotusscript'] = 0;
+
+  $variables['geshifilter_language_enabled_lscript'] = 0;
+
+  $variables['geshifilter_language_enabled_lsl2'] = 0;
+
+  $variables['geshifilter_language_enabled_lua'] = 0;
+
+  $variables['geshifilter_language_enabled_m68k'] = 0;
+
+  $variables['geshifilter_language_enabled_magiksf'] = 0;
+
+  $variables['geshifilter_language_enabled_make'] = 0;
+
+  $variables['geshifilter_language_enabled_mapbasic'] = 0;
+
+  $variables['geshifilter_language_enabled_matlab'] = 0;
+
+  $variables['geshifilter_language_enabled_mirc'] = 0;
+
+  $variables['geshifilter_language_enabled_mmix'] = 0;
+
+  $variables['geshifilter_language_enabled_modula2'] = 0;
+
+  $variables['geshifilter_language_enabled_modula3'] = 0;
+
+  $variables['geshifilter_language_enabled_mpasm'] = 0;
+
+  $variables['geshifilter_language_enabled_mxml'] = 0;
+
+  $variables['geshifilter_language_enabled_mysql'] = 1;
+
+  $variables['geshifilter_language_enabled_nagios'] = 0;
+
+  $variables['geshifilter_language_enabled_netrexx'] = 0;
+
+  $variables['geshifilter_language_enabled_newlisp'] = 0;
+
+  $variables['geshifilter_language_enabled_nsis'] = 0;
+
+  $variables['geshifilter_language_enabled_oberon2'] = 0;
+
+  $variables['geshifilter_language_enabled_objc'] = 0;
+
+  $variables['geshifilter_language_enabled_objeck'] = 0;
+
+  $variables['geshifilter_language_enabled_ocaml'] = 0;
+
+  $variables['geshifilter_language_enabled_ocaml-brief'] = 0;
+
+  $variables['geshifilter_language_enabled_octave'] = 0;
+
+  $variables['geshifilter_language_enabled_oobas'] = 0;
+
+  $variables['geshifilter_language_enabled_oorexx'] = 0;
+
+  $variables['geshifilter_language_enabled_oracle11'] = 0;
+
+  $variables['geshifilter_language_enabled_oracle8'] = 0;
+
+  $variables['geshifilter_language_enabled_oxygene'] = 0;
+
+  $variables['geshifilter_language_enabled_oz'] = 0;
+
+  $variables['geshifilter_language_enabled_parasail'] = 0;
+
+  $variables['geshifilter_language_enabled_parigp'] = 0;
+
+  $variables['geshifilter_language_enabled_pascal'] = 0;
+
+  $variables['geshifilter_language_enabled_pcre'] = 0;
+
+  $variables['geshifilter_language_enabled_per'] = 0;
+
+  $variables['geshifilter_language_enabled_perl'] = 0;
+
+  $variables['geshifilter_language_enabled_perl6'] = 0;
+
+  $variables['geshifilter_language_enabled_pf'] = 0;
+
+  $variables['geshifilter_language_enabled_php'] = 1;
+
+  $variables['geshifilter_language_enabled_php-brief'] = 0;
+
+  $variables['geshifilter_language_enabled_pic16'] = 0;
+
+  $variables['geshifilter_language_enabled_pike'] = 0;
+
+  $variables['geshifilter_language_enabled_pixelbender'] = 0;
+
+  $variables['geshifilter_language_enabled_pli'] = 0;
+
+  $variables['geshifilter_language_enabled_plsql'] = 0;
+
+  $variables['geshifilter_language_enabled_postgresql'] = 0;
+
+  $variables['geshifilter_language_enabled_povray'] = 0;
+
+  $variables['geshifilter_language_enabled_powerbuilder'] = 0;
+
+  $variables['geshifilter_language_enabled_powershell'] = 0;
+
+  $variables['geshifilter_language_enabled_proftpd'] = 0;
+
+  $variables['geshifilter_language_enabled_progress'] = 0;
+
+  $variables['geshifilter_language_enabled_prolog'] = 0;
+
+  $variables['geshifilter_language_enabled_properties'] = 0;
+
+  $variables['geshifilter_language_enabled_providex'] = 0;
+
+  $variables['geshifilter_language_enabled_purebasic'] = 0;
+
+  $variables['geshifilter_language_enabled_pycon'] = 0;
+
+  $variables['geshifilter_language_enabled_pys60'] = 0;
+
+  $variables['geshifilter_language_enabled_python'] = 1;
+
+  $variables['geshifilter_language_enabled_q'] = 0;
+
+  $variables['geshifilter_language_enabled_qbasic'] = 0;
+
+  $variables['geshifilter_language_enabled_rails'] = 0;
+
+  $variables['geshifilter_language_enabled_rebol'] = 0;
+
+  $variables['geshifilter_language_enabled_reg'] = 0;
+
+  $variables['geshifilter_language_enabled_rexx'] = 0;
+
+  $variables['geshifilter_language_enabled_robots'] = 0;
+
+  $variables['geshifilter_language_enabled_rpmspec'] = 0;
+
+  $variables['geshifilter_language_enabled_rsplus'] = 0;
+
+  $variables['geshifilter_language_enabled_ruby'] = 1;
+
+  $variables['geshifilter_language_enabled_sas'] = 0;
+
+  $variables['geshifilter_language_enabled_scala'] = 0;
+
+  $variables['geshifilter_language_enabled_scheme'] = 0;
+
+  $variables['geshifilter_language_enabled_scilab'] = 0;
+
+  $variables['geshifilter_language_enabled_sdlbasic'] = 0;
+
+  $variables['geshifilter_language_enabled_smalltalk'] = 0;
+
+  $variables['geshifilter_language_enabled_smarty'] = 0;
+
+  $variables['geshifilter_language_enabled_spark'] = 0;
+
+  $variables['geshifilter_language_enabled_sparql'] = 0;
+
+  $variables['geshifilter_language_enabled_sql'] = 0;
+
+  $variables['geshifilter_language_enabled_stonescript'] = 0;
+
+  $variables['geshifilter_language_enabled_systemverilog'] = 0;
+
+  $variables['geshifilter_language_enabled_tcl'] = 0;
+
+  $variables['geshifilter_language_enabled_teraterm'] = 0;
+
+  $variables['geshifilter_language_enabled_text'] = 0;
+
+  $variables['geshifilter_language_enabled_thinbasic'] = 0;
+
+  $variables['geshifilter_language_enabled_tsql'] = 0;
+
+  $variables['geshifilter_language_enabled_typoscript'] = 0;
+
+  $variables['geshifilter_language_enabled_unicon'] = 0;
+
+  $variables['geshifilter_language_enabled_upc'] = 0;
+
+  $variables['geshifilter_language_enabled_urbi'] = 0;
+
+  $variables['geshifilter_language_enabled_uscript'] = 0;
+
+  $variables['geshifilter_language_enabled_vala'] = 0;
+
+  $variables['geshifilter_language_enabled_vb'] = 0;
+
+  $variables['geshifilter_language_enabled_vbnet'] = 0;
+
+  $variables['geshifilter_language_enabled_vedit'] = 0;
+
+  $variables['geshifilter_language_enabled_verilog'] = 0;
+
+  $variables['geshifilter_language_enabled_vhdl'] = 0;
+
+  $variables['geshifilter_language_enabled_vim'] = 0;
+
+  $variables['geshifilter_language_enabled_visualfoxpro'] = 0;
+
+  $variables['geshifilter_language_enabled_visualprolog'] = 0;
+
+  $variables['geshifilter_language_enabled_whitespace'] = 0;
+
+  $variables['geshifilter_language_enabled_whois'] = 0;
+
+  $variables['geshifilter_language_enabled_winbatch'] = 0;
+
+  $variables['geshifilter_language_enabled_xbasic'] = 0;
+
+  $variables['geshifilter_language_enabled_xml'] = 1;
+
+  $variables['geshifilter_language_enabled_xorg_conf'] = 0;
+
+  $variables['geshifilter_language_enabled_xpp'] = 0;
+
+  $variables['geshifilter_language_enabled_yaml'] = 0;
+
+  $variables['geshifilter_language_enabled_z80'] = 0;
+
+  $variables['geshifilter_language_enabled_zxbasic'] = 0;
+
+  $variables['geshifilter_language_tags_4cs'] = '';
+
+  $variables['geshifilter_language_tags_6502acme'] = '';
+
+  $variables['geshifilter_language_tags_6502kickass'] = '';
+
+  $variables['geshifilter_language_tags_6502tasm'] = '';
+
+  $variables['geshifilter_language_tags_68000devpac'] = '';
+
+  $variables['geshifilter_language_tags_abap'] = '';
+
+  $variables['geshifilter_language_tags_actionscript'] = '';
+
+  $variables['geshifilter_language_tags_actionscript3'] = '';
+
+  $variables['geshifilter_language_tags_ada'] = '';
+
+  $variables['geshifilter_language_tags_algol68'] = '';
+
+  $variables['geshifilter_language_tags_apache'] = '';
+
+  $variables['geshifilter_language_tags_applescript'] = '';
+
+  $variables['geshifilter_language_tags_apt_sources'] = '';
+
+  $variables['geshifilter_language_tags_arm'] = '';
+
+  $variables['geshifilter_language_tags_asm'] = '';
+
+  $variables['geshifilter_language_tags_asp'] = '';
+
+  $variables['geshifilter_language_tags_asymptote'] = '';
+
+  $variables['geshifilter_language_tags_autoconf'] = '';
+
+  $variables['geshifilter_language_tags_autohotkey'] = '';
+
+  $variables['geshifilter_language_tags_autoit'] = '';
+
+  $variables['geshifilter_language_tags_avisynth'] = '';
+
+  $variables['geshifilter_language_tags_awk'] = '';
+
+  $variables['geshifilter_language_tags_bascomavr'] = '';
+
+  $variables['geshifilter_language_tags_bash'] = '';
+
+  $variables['geshifilter_language_tags_basic4gl'] = '';
+
+  $variables['geshifilter_language_tags_bf'] = '';
+
+  $variables['geshifilter_language_tags_bibtex'] = '';
+
+  $variables['geshifilter_language_tags_blitzbasic'] = '';
+
+  $variables['geshifilter_language_tags_bnf'] = '';
+
+  $variables['geshifilter_language_tags_boo'] = '';
+
+  $variables['geshifilter_language_tags_c'] = '<c>';
+
+  $variables['geshifilter_language_tags_caddcl'] = '';
+
+  $variables['geshifilter_language_tags_cadlisp'] = '';
+
+  $variables['geshifilter_language_tags_cfdg'] = '';
+
+  $variables['geshifilter_language_tags_cfm'] = '';
+
+  $variables['geshifilter_language_tags_chaiscript'] = '';
+
+  $variables['geshifilter_language_tags_cil'] = '';
+
+  $variables['geshifilter_language_tags_clojure'] = '';
+
+  $variables['geshifilter_language_tags_cmake'] = '';
+
+  $variables['geshifilter_language_tags_cobol'] = '';
+
+  $variables['geshifilter_language_tags_coffeescript'] = '';
+
+  $variables['geshifilter_language_tags_cpp'] = '<cpp>';
+
+  $variables['geshifilter_language_tags_cpp-qt'] = '';
+
+  $variables['geshifilter_language_tags_csharp'] = '';
+
+  $variables['geshifilter_language_tags_css'] = '';
+
+  $variables['geshifilter_language_tags_cuesheet'] = '';
+
+  $variables['geshifilter_language_tags_c_loadrunner'] = '';
+
+  $variables['geshifilter_language_tags_c_mac'] = '';
+
+  $variables['geshifilter_language_tags_d'] = '';
+
+  $variables['geshifilter_language_tags_dcl'] = '';
+
+  $variables['geshifilter_language_tags_dcpu16'] = '';
+
+  $variables['geshifilter_language_tags_dcs'] = '';
+
+  $variables['geshifilter_language_tags_delphi'] = '';
+
+  $variables['geshifilter_language_tags_diff'] = '';
+
+  $variables['geshifilter_language_tags_div'] = '';
+
+  $variables['geshifilter_language_tags_dos'] = '';
+
+  $variables['geshifilter_language_tags_dot'] = '';
+
+  $variables['geshifilter_language_tags_drupal5'] = '<drupal5>';
+
+  $variables['geshifilter_language_tags_drupal6'] = '<drupal6>';
+
+  $variables['geshifilter_language_tags_e'] = '';
+
+  $variables['geshifilter_language_tags_ecmascript'] = '';
+
+  $variables['geshifilter_language_tags_eiffel'] = '';
+
+  $variables['geshifilter_language_tags_email'] = '';
+
+  $variables['geshifilter_language_tags_epc'] = '';
+
+  $variables['geshifilter_language_tags_erlang'] = '';
+
+  $variables['geshifilter_language_tags_euphoria'] = '';
+
+  $variables['geshifilter_language_tags_f1'] = '';
+
+  $variables['geshifilter_language_tags_falcon'] = '';
+
+  $variables['geshifilter_language_tags_fo'] = '';
+
+  $variables['geshifilter_language_tags_fortran'] = '';
+
+  $variables['geshifilter_language_tags_freebasic'] = '';
+
+  $variables['geshifilter_language_tags_freeswitch'] = '';
+
+  $variables['geshifilter_language_tags_fsharp'] = '';
+
+  $variables['geshifilter_language_tags_gambas'] = '';
+
+  $variables['geshifilter_language_tags_gdb'] = '';
+
+  $variables['geshifilter_language_tags_genero'] = '';
+
+  $variables['geshifilter_language_tags_genie'] = '';
+
+  $variables['geshifilter_language_tags_gettext'] = '';
+
+  $variables['geshifilter_language_tags_glsl'] = '';
+
+  $variables['geshifilter_language_tags_gml'] = '';
+
+  $variables['geshifilter_language_tags_gnuplot'] = '';
+
+  $variables['geshifilter_language_tags_go'] = '';
+
+  $variables['geshifilter_language_tags_groovy'] = '';
+
+  $variables['geshifilter_language_tags_gwbasic'] = '';
+
+  $variables['geshifilter_language_tags_haskell'] = '';
+
+  $variables['geshifilter_language_tags_haxe'] = '';
+
+  $variables['geshifilter_language_tags_hicest'] = '';
+
+  $variables['geshifilter_language_tags_hq9plus'] = '';
+
+  $variables['geshifilter_language_tags_html4strict'] = '';
+
+  $variables['geshifilter_language_tags_html5'] = '';
+
+  $variables['geshifilter_language_tags_icon'] = '';
+
+  $variables['geshifilter_language_tags_idl'] = '';
+
+  $variables['geshifilter_language_tags_ini'] = '';
+
+  $variables['geshifilter_language_tags_inno'] = '';
+
+  $variables['geshifilter_language_tags_intercal'] = '';
+
+  $variables['geshifilter_language_tags_io'] = '';
+
+  $variables['geshifilter_language_tags_j'] = '';
+
+  $variables['geshifilter_language_tags_java'] = '<java>';
+
+  $variables['geshifilter_language_tags_java5'] = '';
+
+  $variables['geshifilter_language_tags_javascript'] = '<javascript>';
+
+  $variables['geshifilter_language_tags_jquery'] = '';
+
+  $variables['geshifilter_language_tags_kixtart'] = '';
+
+  $variables['geshifilter_language_tags_klonec'] = '';
+
+  $variables['geshifilter_language_tags_klonecpp'] = '';
+
+  $variables['geshifilter_language_tags_latex'] = '';
+
+  $variables['geshifilter_language_tags_lb'] = '';
+
+  $variables['geshifilter_language_tags_ldif'] = '';
+
+  $variables['geshifilter_language_tags_lisp'] = '';
+
+  $variables['geshifilter_language_tags_llvm'] = '';
+
+  $variables['geshifilter_language_tags_locobasic'] = '';
+
+  $variables['geshifilter_language_tags_logtalk'] = '';
+
+  $variables['geshifilter_language_tags_lolcode'] = '';
+
+  $variables['geshifilter_language_tags_lotusformulas'] = '';
+
+  $variables['geshifilter_language_tags_lotusscript'] = '';
+
+  $variables['geshifilter_language_tags_lscript'] = '';
+
+  $variables['geshifilter_language_tags_lsl2'] = '';
+
+  $variables['geshifilter_language_tags_lua'] = '';
+
+  $variables['geshifilter_language_tags_m68k'] = '';
+
+  $variables['geshifilter_language_tags_magiksf'] = '';
+
+  $variables['geshifilter_language_tags_make'] = '';
+
+  $variables['geshifilter_language_tags_mapbasic'] = '';
+
+  $variables['geshifilter_language_tags_matlab'] = '';
+
+  $variables['geshifilter_language_tags_mirc'] = '';
+
+  $variables['geshifilter_language_tags_mmix'] = '';
+
+  $variables['geshifilter_language_tags_modula2'] = '';
+
+  $variables['geshifilter_language_tags_modula3'] = '';
+
+  $variables['geshifilter_language_tags_mpasm'] = '';
+
+  $variables['geshifilter_language_tags_mxml'] = '';
+
+  $variables['geshifilter_language_tags_mysql'] = '';
+
+  $variables['geshifilter_language_tags_nagios'] = '';
+
+  $variables['geshifilter_language_tags_netrexx'] = '';
+
+  $variables['geshifilter_language_tags_newlisp'] = '';
+
+  $variables['geshifilter_language_tags_nsis'] = '';
+
+  $variables['geshifilter_language_tags_oberon2'] = '';
+
+  $variables['geshifilter_language_tags_objc'] = '';
+
+  $variables['geshifilter_language_tags_objeck'] = '';
+
+  $variables['geshifilter_language_tags_ocaml'] = '';
+
+  $variables['geshifilter_language_tags_ocaml-brief'] = '';
+
+  $variables['geshifilter_language_tags_octave'] = '';
+
+  $variables['geshifilter_language_tags_oobas'] = '';
+
+  $variables['geshifilter_language_tags_oorexx'] = '';
+
+  $variables['geshifilter_language_tags_oracle11'] = '';
+
+  $variables['geshifilter_language_tags_oracle8'] = '';
+
+  $variables['geshifilter_language_tags_oxygene'] = '';
+
+  $variables['geshifilter_language_tags_oz'] = '';
+
+  $variables['geshifilter_language_tags_parasail'] = '';
+
+  $variables['geshifilter_language_tags_parigp'] = '';
+
+  $variables['geshifilter_language_tags_pascal'] = '';
+
+  $variables['geshifilter_language_tags_pcre'] = '';
+
+  $variables['geshifilter_language_tags_per'] = '';
+
+  $variables['geshifilter_language_tags_perl'] = '';
+
+  $variables['geshifilter_language_tags_perl6'] = '';
+
+  $variables['geshifilter_language_tags_pf'] = '';
+
+  $variables['geshifilter_language_tags_php'] = '<php>';
+
+  $variables['geshifilter_language_tags_php-brief'] = '';
+
+  $variables['geshifilter_language_tags_pic16'] = '';
+
+  $variables['geshifilter_language_tags_pike'] = '';
+
+  $variables['geshifilter_language_tags_pixelbender'] = '';
+
+  $variables['geshifilter_language_tags_pli'] = '';
+
+  $variables['geshifilter_language_tags_plsql'] = '';
+
+  $variables['geshifilter_language_tags_postgresql'] = '';
+
+  $variables['geshifilter_language_tags_povray'] = '';
+
+  $variables['geshifilter_language_tags_powerbuilder'] = '';
+
+  $variables['geshifilter_language_tags_powershell'] = '';
+
+  $variables['geshifilter_language_tags_proftpd'] = '';
+
+  $variables['geshifilter_language_tags_progress'] = '';
+
+  $variables['geshifilter_language_tags_prolog'] = '';
+
+  $variables['geshifilter_language_tags_properties'] = '';
+
+  $variables['geshifilter_language_tags_providex'] = '';
+
+  $variables['geshifilter_language_tags_purebasic'] = '';
+
+  $variables['geshifilter_language_tags_pycon'] = '';
+
+  $variables['geshifilter_language_tags_pys60'] = '';
+
+  $variables['geshifilter_language_tags_python'] = '<python>';
+
+  $variables['geshifilter_language_tags_q'] = '';
+
+  $variables['geshifilter_language_tags_qbasic'] = '';
+
+  $variables['geshifilter_language_tags_rails'] = '';
+
+  $variables['geshifilter_language_tags_rebol'] = '';
+
+  $variables['geshifilter_language_tags_reg'] = '';
+
+  $variables['geshifilter_language_tags_rexx'] = '';
+
+  $variables['geshifilter_language_tags_robots'] = '';
+
+  $variables['geshifilter_language_tags_rpmspec'] = '';
+
+  $variables['geshifilter_language_tags_rsplus'] = '';
+
+  $variables['geshifilter_language_tags_ruby'] = '<ruby>';
+
+  $variables['geshifilter_language_tags_sas'] = '';
+
+  $variables['geshifilter_language_tags_scala'] = '';
+
+  $variables['geshifilter_language_tags_scheme'] = '';
+
+  $variables['geshifilter_language_tags_scilab'] = '';
+
+  $variables['geshifilter_language_tags_sdlbasic'] = '';
+
+  $variables['geshifilter_language_tags_smalltalk'] = '';
+
+  $variables['geshifilter_language_tags_smarty'] = '';
+
+  $variables['geshifilter_language_tags_spark'] = '';
+
+  $variables['geshifilter_language_tags_sparql'] = '';
+
+  $variables['geshifilter_language_tags_sql'] = '';
+
+  $variables['geshifilter_language_tags_stonescript'] = '';
+
+  $variables['geshifilter_language_tags_systemverilog'] = '';
+
+  $variables['geshifilter_language_tags_tcl'] = '';
+
+  $variables['geshifilter_language_tags_teraterm'] = '';
+
+  $variables['geshifilter_language_tags_text'] = '';
+
+  $variables['geshifilter_language_tags_thinbasic'] = '';
+
+  $variables['geshifilter_language_tags_tsql'] = '';
+
+  $variables['geshifilter_language_tags_typoscript'] = '';
+
+  $variables['geshifilter_language_tags_unicon'] = '';
+
+  $variables['geshifilter_language_tags_upc'] = '';
+
+  $variables['geshifilter_language_tags_urbi'] = '';
+
+  $variables['geshifilter_language_tags_uscript'] = '';
+
+  $variables['geshifilter_language_tags_vala'] = '';
+
+  $variables['geshifilter_language_tags_vb'] = '';
+
+  $variables['geshifilter_language_tags_vbnet'] = '';
+
+  $variables['geshifilter_language_tags_vedit'] = '';
+
+  $variables['geshifilter_language_tags_verilog'] = '';
+
+  $variables['geshifilter_language_tags_vhdl'] = '';
+
+  $variables['geshifilter_language_tags_vim'] = '';
+
+  $variables['geshifilter_language_tags_visualfoxpro'] = '';
+
+  $variables['geshifilter_language_tags_visualprolog'] = '';
+
+  $variables['geshifilter_language_tags_whitespace'] = '';
+
+  $variables['geshifilter_language_tags_whois'] = '';
+
+  $variables['geshifilter_language_tags_winbatch'] = '';
+
+  $variables['geshifilter_language_tags_xbasic'] = '';
+
+  $variables['geshifilter_language_tags_xml'] = '';
+
+  $variables['geshifilter_language_tags_xorg_conf'] = '';
+
+  $variables['geshifilter_language_tags_xpp'] = '';
+
+  $variables['geshifilter_language_tags_yaml'] = '';
+
+  $variables['geshifilter_language_tags_z80'] = '';
+
+  $variables['geshifilter_language_tags_zxbasic'] = '';
+
+  $variables['geshifilter_tags'] = 'code blockcode';
+
+  $variables['geshifilter_tag_styles'] = array(
+    2 => '2',
+    8 => '8',
+    1 => 0,
+    4 => 0,
+  );
+
+  $variables['geshifilter_use_highlight_string_for_php'] = 0;
+
+  $variables['header'] = array(
+    0 => 'Language',
+    1 => 'GeSHi language code',
+    2 => 'Tag/language attribute value',
+  );
 
   $variables['menu_expanded'] = array();
 
@@ -129,43 +2037,130 @@ function custom_config_drush_ctex_bonus_variables() {
     3 => 247,
     4 => 246,
     5 => 245,
-    6 => 125,
-    7 => 124,
-    8 => 123,
-    9 => 122,
-    10 => 121,
-    11 => 117,
-    12 => 63,
-    13 => 62,
-    14 => 61,
-    15 => 60,
-    16 => 59,
-    17 => 58,
-    18 => 44,
-    19 => 31,
-    20 => 30,
-    21 => 29,
-    22 => 24,
-    23 => 21,
-    24 => 15,
-    25 => 14,
-    26 => 13,
-    27 => 11,
-    28 => 7,
-    29 => 6,
-    30 => 5,
-    31 => 3,
-    32 => 2,
-    33 => 1,
+    6 => 127,
+    7 => 126,
+    8 => 125,
+    9 => 124,
+    10 => 123,
+    11 => 122,
+    12 => 121,
+    13 => 117,
+    14 => 63,
+    15 => 62,
+    16 => 61,
+    17 => 60,
+    18 => 59,
+    19 => 58,
+    20 => 44,
+    21 => 31,
+    22 => 30,
+    23 => 29,
+    24 => 24,
+    25 => 21,
+    26 => 15,
+    27 => 14,
+    28 => 13,
+    29 => 11,
+    30 => 7,
+    31 => 6,
+    32 => 5,
+    33 => 3,
+    34 => 2,
+    35 => 1,
   );
 
   $variables['menu_options_page'] = array(
     0 => 'main-menu',
   );
 
+  $variables['menu_options_wiki_page'] = array(
+    0 => 'main-menu',
+  );
+
   $variables['menu_parent_page'] = 'main-menu:0';
 
+  $variables['menu_parent_wiki_page'] = 'main-menu:0';
+
   $variables['node_admin_theme'] = 1;
+
+  $variables['node_export_code'] = 'all';
+
+  $variables['node_export_dsv_delimiter'] = ',';
+
+  $variables['node_export_dsv_enclosure'] = '"';
+
+  $variables['node_export_dsv_escape_eol'] = 1;
+
+  $variables['node_export_dsv_seperator'] = '\\r\\n';
+
+  $variables['node_export_existing'] = 'revision';
+
+  $variables['node_export_filename'] = 'node-export[node_export_filename:nid-list]([node_export_filename:node-count]-nodes).[node_export_filename:timestamp].[node_export_filename:format]';
+
+  $variables['node_export_file_assets_path'] = '';
+
+  $variables['node_export_file_list'] = '10';
+
+  $variables['node_export_file_mode'] = 'remote';
+
+  $variables['node_export_file_supported_fields'] = 'file, image';
+
+  $variables['node_export_file_types'] = array(
+    'forum' => 'forum',
+    'page' => 'page',
+  );
+
+  $variables['node_export_format'] = array(
+    'json' => 'json',
+    'drupal' => 0,
+    'serialize' => 0,
+    'xml' => 0,
+    'dsv' => 0,
+  );
+
+  $variables['node_export_reset_author_forum'] = 1;
+
+  $variables['node_export_reset_author_page'] = 1;
+
+  $variables['node_export_reset_book_mlid_forum'] = 1;
+
+  $variables['node_export_reset_book_mlid_page'] = 1;
+
+  $variables['node_export_reset_changed_forum'] = 0;
+
+  $variables['node_export_reset_changed_page'] = 1;
+
+  $variables['node_export_reset_created_forum'] = 0;
+
+  $variables['node_export_reset_created_page'] = 1;
+
+  $variables['node_export_reset_last_comment_timestamp_forum'] = 1;
+
+  $variables['node_export_reset_last_comment_timestamp_page'] = 1;
+
+  $variables['node_export_reset_menu_forum'] = 1;
+
+  $variables['node_export_reset_menu_page'] = 1;
+
+  $variables['node_export_reset_path_forum'] = 1;
+
+  $variables['node_export_reset_path_page'] = 1;
+
+  $variables['node_export_reset_promote_forum'] = 0;
+
+  $variables['node_export_reset_promote_page'] = 0;
+
+  $variables['node_export_reset_revision_timestamp_forum'] = 1;
+
+  $variables['node_export_reset_revision_timestamp_page'] = 1;
+
+  $variables['node_export_reset_status_forum'] = 0;
+
+  $variables['node_export_reset_status_page'] = 0;
+
+  $variables['node_export_reset_sticky_forum'] = 0;
+
+  $variables['node_export_reset_sticky_page'] = 0;
 
   $variables['node_options_forum'] = array(
     0 => 'status',
@@ -176,11 +2171,44 @@ function custom_config_drush_ctex_bonus_variables() {
     1 => 'revision',
   );
 
+  $variables['node_options_wiki_page'] = array(
+    0 => 'status',
+    1 => 'revision',
+  );
+
   $variables['node_preview_page'] = '1';
+
+  $variables['node_preview_wiki_page'] = '1';
 
   $variables['node_submitted_page'] = 0;
 
+  $variables['node_submitted_wiki_page'] = 0;
+
+  $variables['pathauto_blog_pattern'] = 'blogs/[user:name]';
+
+  $variables['pathauto_forum_pattern'] = 'forum/[term:parents]/[term:name]';
+
+  $variables['pathauto_node_forum_pattern'] = 'forum/topic/[node:title]';
+
+  $variables['pathauto_node_page_pattern'] = '[node:title]';
+
+  $variables['pathauto_node_pattern'] = 'p/[node:title]';
+
+  $variables['pathauto_node_wiki_page_pattern'] = 'wiki/[node:title]';
+
+  $variables['pathauto_punctuation_hyphen'] = 1;
+
+  $variables['pathauto_taxonomy_term_categories_pattern'] = 'categories/[term:name]';
+
+  $variables['pathauto_taxonomy_term_pattern'] = '[term:vocabulary]/[term:name]';
+
+  $variables['pathauto_taxonomy_term_tags_pattern'] = 'tags/[term:name]';
+
+  $variables['pathauto_user_pattern'] = 'u/[user:name]';
+
   $variables['save_continue_page'] = 'Save and add fields';
+
+  $variables['save_continue_wiki_page'] = 'Save and add fields';
 
   $variables['site_default_country'] = 'IN';
 
@@ -327,6 +2355,74 @@ Your account on [site:name] has been canceled.
   $variables['user_register'] = '2';
 
   $variables['user_signatures'] = 0;
+
+  $variables['wikitools_404_type'] = array(
+    'Link to creation' => 'Link to creation',
+    'Link to search' => 0,
+    'Creation form' => 0,
+  );
+
+  $variables['wikitools_disallowed_characters'] = '[]{}|';
+
+  $variables['wikitools_hijack_freelinking'] = 1;
+
+  $variables['wikitools_main_page_title'] = 'Main Page';
+
+  $variables['wikitools_node_types'] = array(
+    'wiki_page' => 'wiki_page',
+    'forum' => 0,
+    'page' => 0,
+  );
+
+  $variables['wikitools_options'] = array(
+    'node creation' => 'node creation',
+    'unique titles' => 'unique titles',
+    'move protection' => 'move protection',
+    'underscore as space' => 'underscore as space',
+    'dash as space' => 'dash as space',
+    'node search' => 0,
+    'auto redirect' => 0,
+  );
+
+  $variables['wikitools_path'] = 'wiki';
+
+  $variables['wikitools_subpages'] = 'edit, delete, view, revisions';
+
+  $variables['wikitools_subpages_handling'] = 'url';
+
+  $variables['xmlsitemap_generated_last'] = 1367676383;
+
+  $variables['xmlsitemap_regenerate_needed'] = TRUE;
+
+  $variables['xmlsitemap_settings_menu_link_main-menu'] = array(
+    'status' => '1',
+    'priority' => '0.9',
+  );
+
+  $variables['xmlsitemap_settings_node_page'] = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+
+  $variables['xmlsitemap_settings_node_wiki_page'] = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+
+  $variables['xmlsitemap_settings_taxonomy_term_categories'] = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+
+  $variables['xmlsitemap_settings_taxonomy_term_forums'] = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+
+  $variables['xmlsitemap_settings_taxonomy_term_tags'] = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
 
   return $variables;
 }

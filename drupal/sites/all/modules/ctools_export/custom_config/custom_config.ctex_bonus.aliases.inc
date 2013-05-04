@@ -12,5 +12,17 @@
 function custom_config_drush_ctex_bonus_aliases() {
   $aliases = array();
 
+  $aliases[forum/1-und] = array(
+    'source' => 'forum/1',
+    'alias' => 'forum/general-discussion',
+    'language' => 'und',
+  );
+
+  $aliases[forum/3-und] = array(
+    'source' => 'forum/3',
+    'alias' => 'forum/gnulinux-discussion',
+    'language' => 'und',
+  );
+
   return $aliases;
 }

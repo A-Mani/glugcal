@@ -14,7 +14,7 @@ function custom_config_drush_ctex_bonus_ctypes() {
 
   $ctypes['page'] = array(
     'type' => 'page',
-    'name' => 'Page',
+    'name' => 'Static Page',
     'base' => 'node_content',
     'module' => 'node',
     'description' => 'Add a static page whose contents are not frequently updated, e.g. About',
@@ -26,6 +26,23 @@ function custom_config_drush_ctex_bonus_ctypes() {
     'locked' => '0',
     'disabled' => '0',
     'orig_type' => 'page',
+    'disabled_changed' => FALSE,
+  );
+
+  $ctypes['wiki_page'] = array(
+    'type' => 'wiki_page',
+    'name' => 'Wiki Page',
+    'base' => 'node_content',
+    'module' => 'node',
+    'description' => 'Add a wiki page. ',
+    'help' => '',
+    'has_title' => '1',
+    'title_label' => 'Title',
+    'custom' => '1',
+    'modified' => '1',
+    'locked' => '0',
+    'disabled' => '0',
+    'orig_type' => 'wiki_page',
     'disabled_changed' => FALSE,
   );
 
