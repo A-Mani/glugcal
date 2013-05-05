@@ -18,6 +18,33 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['additional_settings__active_tab_wiki_page'] = 'edit-xmlsitemap';
 
+  $variables['admin_menu_cache_client'] = 1;
+
+  $variables['admin_menu_components'] = array(
+    'admin_menu.icon' => TRUE,
+    'admin_menu.menu' => TRUE,
+    'admin_menu.search' => TRUE,
+    'admin_menu.users' => TRUE,
+    'admin_menu.account' => TRUE,
+    'shortcut.links' => FALSE,
+  );
+
+  $variables['admin_menu_devel_modules_skip'] = array(
+    'admin_devel' => 0,
+    'field_ui' => 0,
+    'views_ui' => 0,
+  );
+
+  $variables['admin_menu_margin_top'] = 1;
+
+  $variables['admin_menu_position_fixed'] = 1;
+
+  $variables['admin_menu_tweak_modules'] = 0;
+
+  $variables['admin_menu_tweak_permissions'] = 0;
+
+  $variables['admin_menu_tweak_tabs'] = 0;
+
   $variables['admin_theme'] = 'seven';
 
   $variables['advanced_forum_add_local_task'] = 1;
@@ -51,6 +78,8 @@ function custom_config_drush_ctex_bonus_variables() {
   $variables['advanced_forum_user_picture_preset'] = '';
 
   $variables['advanced_forum_views_as_tabs'] = 1;
+
+  $variables['advanced__active_tab'] = 'edit-tweaks';
 
   $variables['anonymous'] = 'Anonymous';
 
@@ -238,7 +267,7 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['freelinking_file_file_path'] = 'public://';
 
-  $variables['freelinking_match_syntax'] = 'markdown';
+  $variables['freelinking_match_syntax'] = 'double_bracket';
 
   $variables['freelinking_nodetitle_failover'] = 'search';
 
@@ -2275,6 +2304,124 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['pathauto_user_pattern'] = 'u/[user:name]';
 
+  $variables['print_comments'] = 0;
+
+  $variables['print_css'] = '';
+
+  $variables['print_display_sys_urllist'] = 0;
+
+  $variables['print_footer_options'] = '2';
+
+  $variables['print_footer_user'] = 'IGLUG-Cal <http://ilug-cal.info>';
+
+  $variables['print_html_book_link'] = '1';
+
+  $variables['print_html_link_class'] = 'print-page';
+
+  $variables['print_html_link_pos'] = array(
+    'link' => 'link',
+    'block' => 'block',
+    'help' => 'help',
+    'corner' => 0,
+  );
+
+  $variables['print_html_link_teaser'] = 0;
+
+  $variables['print_html_link_use_alias'] = 0;
+
+  $variables['print_html_new_window'] = 0;
+
+  $variables['print_html_node_link_pages'] = '';
+
+  $variables['print_html_node_link_visibility'] = '0';
+
+  $variables['print_html_sendtoprinter'] = 0;
+
+  $variables['print_html_show_link'] = '2';
+
+  $variables['print_html_sys_link_pages'] = '';
+
+  $variables['print_html_sys_link_visibility'] = '1';
+
+  $variables['print_html_windowclose'] = 1;
+
+  $variables['print_keep_theme_css'] = 0;
+
+  $variables['print_logo_options'] = '0';
+
+  $variables['print_logo_upload'] = '';
+
+  $variables['print_logo_url'] = '';
+
+  $variables['print_newwindow'] = '1';
+
+  $variables['print_pdf_autoconfig'] = 1;
+
+  $variables['print_pdf_book_link'] = '1';
+
+  $variables['print_pdf_content_disposition'] = '2';
+
+  $variables['print_pdf_display_sys_urllist'] = 0;
+
+  $variables['print_pdf_dompdf_unicode'] = 1;
+
+  $variables['print_pdf_filename'] = '[site:name] - [node:title] - [node:changed:custom:Y-m-d]';
+
+  $variables['print_pdf_font_family'] = 'dejavusans';
+
+  $variables['print_pdf_font_size'] = '10';
+
+  $variables['print_pdf_font_subsetting'] = 0;
+
+  $variables['print_pdf_images_via_file'] = 0;
+
+  $variables['print_pdf_link_class'] = 'print-pdf';
+
+  $variables['print_pdf_link_pos'] = array(
+    'link' => 'link',
+    'block' => 'block',
+    'help' => 'help',
+    'corner' => 0,
+  );
+
+  $variables['print_pdf_link_teaser'] = 0;
+
+  $variables['print_pdf_link_use_alias'] = 0;
+
+  $variables['print_pdf_node_link_pages'] = '';
+
+  $variables['print_pdf_node_link_visibility'] = '0';
+
+  $variables['print_pdf_page_orientation'] = 'portrait';
+
+  $variables['print_pdf_paper_size'] = 'A4';
+
+  $variables['print_pdf_pdf_tool'] = 'sites/all/libraries/dompdf/dompdf_config.inc.php';
+
+  $variables['print_pdf_show_link'] = '2';
+
+  $variables['print_pdf_sys_link_pages'] = '';
+
+  $variables['print_pdf_sys_link_visibility'] = '1';
+
+  $variables['print_pdf_wkhtmltopdf_options'] = '--footer-font-size 7 --footer-right \'[page]\'';
+
+  $variables['print_robots_noarchive'] = 0;
+
+  $variables['print_robots_nofollow'] = 1;
+
+  $variables['print_robots_noindex'] = 1;
+
+  $variables['print_sourceurl_date'] = 1;
+
+  $variables['print_sourceurl_enabled'] = 1;
+
+  $variables['print_sourceurl_forcenode'] = 0;
+
+  $variables['print_urls'] = 1;
+
+  $variables['print_urls_anchors'] = 1;
+
   $variables['save_continue_article'] = 'Save and add fields';
 
   $variables['save_continue_page'] = 'Save and add fields';
@@ -2288,6 +2435,8 @@ function custom_config_drush_ctex_bonus_variables() {
   $variables['site_name'] = 'IGLUG-Cal';
 
   $variables['statistics_count_content_views'] = 1;
+
+  $variables['statistics_day_timestamp'] = 1367743217;
 
   $variables['statistics_enable_access_log'] = 1;
 
@@ -2495,9 +2644,9 @@ Your account on [site:name] has been canceled.
 
   $variables['wikitools_subpages_handling'] = 'url';
 
-  $variables['xmlsitemap_generated_last'] = 1367687227;
+  $variables['xmlsitemap_generated_last'] = 1367743217;
 
-  $variables['xmlsitemap_regenerate_needed'] = TRUE;
+  $variables['xmlsitemap_regenerate_needed'] = FALSE;
 
   $variables['xmlsitemap_settings_menu_link_main-menu'] = array(
     'status' => '1',

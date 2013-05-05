@@ -12,34 +12,6 @@
 function custom_config_drush_ctex_bonus_fields() {
   $fields = array();
 
-  $fields['comment_body'] = array(
-    'entity_types' => array(
-      0 => 'comment',
-    ),
-    'translatable' => '0',
-    'settings' => array(),
-    'foreign keys' => array(
-      'format' => array(
-        'table' => 'filter_format',
-        'columns' => array(
-          'format' => 'format',
-        ),
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'field_name' => 'comment_body',
-    'type' => 'text_long',
-    'module' => 'text',
-    'active' => '1',
-    'locked' => '0',
-    'cardinality' => '1',
-    'deleted' => '0',
-  );
-
   $fields['body'] = array(
     'entity_types' => array(
       0 => 'node',
@@ -62,40 +34,6 @@ function custom_config_drush_ctex_bonus_fields() {
     'field_name' => 'body',
     'type' => 'text_with_summary',
     'module' => 'text',
-    'active' => '1',
-    'locked' => '0',
-    'cardinality' => '1',
-    'deleted' => '0',
-  );
-
-  $fields['field_category'] = array(
-    'translatable' => '0',
-    'entity_types' => array(),
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'categories',
-          'parent' => '0',
-        ),
-      ),
-      'profile2_private' => FALSE,
-    ),
-    'foreign keys' => array(
-      'tid' => array(
-        'table' => 'taxonomy_term_data',
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'field_name' => 'field_category',
-    'type' => 'taxonomy_term_reference',
-    'module' => 'taxonomy',
     'active' => '1',
     'locked' => '0',
     'cardinality' => '1',
@@ -136,37 +74,6 @@ function custom_config_drush_ctex_bonus_fields() {
     'deleted' => '0',
   );
 
-  $fields['field_attachments'] = array(
-    'translatable' => '0',
-    'entity_types' => array(),
-    'settings' => array(
-      'display_field' => 0,
-      'display_default' => 0,
-      'uri_scheme' => 'public',
-      'profile2_private' => FALSE,
-    ),
-    'foreign keys' => array(
-      'fid' => array(
-        'table' => 'file_managed',
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-      ),
-    ),
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'field_name' => 'field_attachments',
-    'type' => 'file',
-    'module' => 'file',
-    'active' => '1',
-    'locked' => '0',
-    'cardinality' => '10',
-    'deleted' => '0',
-  );
-
   $fields['taxonomy_forums'] = array(
     'settings' => array(
       'allowed_values' => array(
@@ -194,6 +101,34 @@ function custom_config_drush_ctex_bonus_fields() {
     'field_name' => 'taxonomy_forums',
     'type' => 'taxonomy_term_reference',
     'module' => 'taxonomy',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '1',
+    'deleted' => '0',
+  );
+
+  $fields['comment_body'] = array(
+    'entity_types' => array(
+      0 => 'comment',
+    ),
+    'translatable' => '0',
+    'settings' => array(),
+    'foreign keys' => array(
+      'format' => array(
+        'table' => 'filter_format',
+        'columns' => array(
+          'format' => 'format',
+        ),
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'field_name' => 'comment_body',
+    'type' => 'text_long',
+    'module' => 'text',
     'active' => '1',
     'locked' => '0',
     'cardinality' => '1',
@@ -435,6 +370,71 @@ function custom_config_drush_ctex_bonus_fields() {
     'deleted' => '0',
   );
 
+  $fields['field_attachments'] = array(
+    'translatable' => '0',
+    'entity_types' => array(),
+    'settings' => array(
+      'display_field' => 0,
+      'display_default' => 0,
+      'uri_scheme' => 'public',
+      'profile2_private' => FALSE,
+    ),
+    'foreign keys' => array(
+      'fid' => array(
+        'table' => 'file_managed',
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'field_name' => 'field_attachments',
+    'type' => 'file',
+    'module' => 'file',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '10',
+    'deleted' => '0',
+  );
+
+  $fields['field_category'] = array(
+    'translatable' => '0',
+    'entity_types' => array(),
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'categories',
+          'parent' => '0',
+        ),
+      ),
+      'profile2_private' => FALSE,
+    ),
+    'foreign keys' => array(
+      'tid' => array(
+        'table' => 'taxonomy_term_data',
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'field_name' => 'field_category',
+    'type' => 'taxonomy_term_reference',
+    'module' => 'taxonomy',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '1',
+    'deleted' => '0',
+  );
+
   return $fields;
 }
 
@@ -444,199 +444,7 @@ function custom_config_drush_ctex_bonus_fields() {
 function custom_config_drush_ctex_bonus_instances() {
   $instances = array();
 
-  $instances['comment:comment_node_article:comment_body'] = array(
-    'label' => 'Comment',
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'required' => TRUE,
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'type' => 'text_default',
-        'weight' => 0,
-        'settings' => array(),
-        'module' => 'text',
-      ),
-    ),
-    'widget' => array(
-      'type' => 'text_textarea',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'weight' => 0,
-      'module' => 'text',
-    ),
-    'description' => '',
-    'field_name' => 'comment_body',
-    'entity_type' => 'comment',
-    'bundle' => 'comment_node_article',
-    'deleted' => '0',
-    'default_value' => NULL,
-  );
-
-  $instances['comment:comment_node_forum:comment_body'] = array(
-    'label' => 'Comment',
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'required' => TRUE,
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'type' => 'text_default',
-        'weight' => 0,
-        'settings' => array(),
-        'module' => 'text',
-      ),
-    ),
-    'widget' => array(
-      'type' => 'text_textarea',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'weight' => 0,
-      'module' => 'text',
-    ),
-    'description' => '',
-    'field_name' => 'comment_body',
-    'entity_type' => 'comment',
-    'bundle' => 'comment_node_forum',
-    'deleted' => '0',
-    'default_value' => NULL,
-  );
-
-  $instances['comment:comment_node_poll:comment_body'] = array(
-    'label' => 'Comment',
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'required' => TRUE,
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'type' => 'text_default',
-        'weight' => 0,
-        'settings' => array(),
-        'module' => 'text',
-      ),
-    ),
-    'widget' => array(
-      'type' => 'text_textarea',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'weight' => 0,
-      'module' => 'text',
-    ),
-    'description' => '',
-    'field_name' => 'comment_body',
-    'entity_type' => 'comment',
-    'bundle' => 'comment_node_poll',
-    'deleted' => '0',
-    'default_value' => NULL,
-  );
-
-  $instances['comment:comment_node_page:comment_body'] = array(
-    'label' => 'Comment',
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'required' => TRUE,
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'type' => 'text_default',
-        'weight' => 0,
-        'settings' => array(),
-        'module' => 'text',
-      ),
-    ),
-    'widget' => array(
-      'type' => 'text_textarea',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'weight' => 0,
-      'module' => 'text',
-    ),
-    'description' => '',
-    'field_name' => 'comment_body',
-    'entity_type' => 'comment',
-    'bundle' => 'comment_node_page',
-    'deleted' => '0',
-    'default_value' => NULL,
-  );
-
-  $instances['comment:comment_node_webform:comment_body'] = array(
-    'label' => 'Comment',
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'required' => TRUE,
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'type' => 'text_default',
-        'weight' => 0,
-        'settings' => array(),
-        'module' => 'text',
-      ),
-    ),
-    'widget' => array(
-      'type' => 'text_textarea',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'weight' => 0,
-      'module' => 'text',
-    ),
-    'description' => '',
-    'field_name' => 'comment_body',
-    'entity_type' => 'comment',
-    'bundle' => 'comment_node_webform',
-    'deleted' => '0',
-    'default_value' => NULL,
-  );
-
-  $instances['comment:comment_node_wiki_page:comment_body'] = array(
-    'label' => 'Comment',
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'required' => TRUE,
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'type' => 'text_default',
-        'weight' => 0,
-        'settings' => array(),
-        'module' => 'text',
-      ),
-    ),
-    'widget' => array(
-      'type' => 'text_textarea',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'weight' => 0,
-      'module' => 'text',
-    ),
-    'description' => '',
-    'field_name' => 'comment_body',
-    'entity_type' => 'comment',
-    'bundle' => 'comment_node_wiki_page',
-    'deleted' => '0',
-    'default_value' => NULL,
-  );
-
-  $instances['node:article:body'] = array(
+  $instances['node:wiki_page:body'] = array(
     'label' => 'Body',
     'widget' => array(
       'type' => 'text_textarea_with_summary',
@@ -674,19 +482,22 @@ function custom_config_drush_ctex_bonus_instances() {
     'description' => '',
     'field_name' => 'body',
     'entity_type' => 'node',
-    'bundle' => 'article',
+    'bundle' => 'wiki_page',
     'deleted' => '0',
     'default_value' => NULL,
   );
 
-  $instances['node:article:field_category'] = array(
-    'label' => 'Category',
+  $instances['node:wiki_page:field_tags'] = array(
+    'label' => 'Tags',
     'widget' => array(
-      'weight' => '32',
-      'type' => 'options_select',
-      'module' => 'options',
-      'active' => 1,
-      'settings' => array(),
+      'weight' => '33',
+      'type' => 'taxonomy_autocomplete',
+      'module' => 'taxonomy',
+      'active' => 0,
+      'settings' => array(
+        'size' => 60,
+        'autocomplete_path' => 'taxonomy/autocomplete',
+      ),
     ),
     'settings' => array(
       'user_register_form' => FALSE,
@@ -706,92 +517,12 @@ function custom_config_drush_ctex_bonus_instances() {
         'weight' => 0,
       ),
     ),
-    'required' => 1,
-    'description' => 'The category this article belongs to.',
-    'default_value' => NULL,
-    'field_name' => 'field_category',
-    'entity_type' => 'node',
-    'bundle' => 'article',
-    'deleted' => '0',
-  );
-
-  $instances['node:article:field_tags'] = array(
-    'label' => 'Tags',
-    'widget' => array(
-      'weight' => '34',
-      'type' => 'taxonomy_autocomplete',
-      'module' => 'taxonomy',
-      'active' => 0,
-      'settings' => array(
-        'size' => 60,
-        'autocomplete_path' => 'taxonomy/autocomplete',
-      ),
-    ),
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'type' => 'taxonomy_term_reference_link',
-        'settings' => array(),
-        'module' => 'taxonomy',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'type' => 'hidden',
-        'label' => 'above',
-        'settings' => array(),
-        'weight' => 0,
-      ),
-    ),
     'required' => 0,
     'description' => '',
     'default_value' => NULL,
     'field_name' => 'field_tags',
     'entity_type' => 'node',
-    'bundle' => 'article',
-    'deleted' => '0',
-  );
-
-  $instances['node:article:field_attachments'] = array(
-    'label' => 'Attachments',
-    'widget' => array(
-      'weight' => '36',
-      'type' => 'file_generic',
-      'module' => 'file',
-      'active' => 1,
-      'settings' => array(
-        'progress_indicator' => 'bar',
-      ),
-    ),
-    'settings' => array(
-      'file_directory' => 'attachments/articles',
-      'file_extensions' => 'odt odf doc docx zip tar gz bz2 jpg jpeg png gif txt xls ods xlsx odp ppt pdf pptx',
-      'max_filesize' => '',
-      'description_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'type' => 'file_default',
-        'settings' => array(),
-        'module' => 'file',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'type' => 'hidden',
-        'label' => 'above',
-        'settings' => array(),
-        'weight' => 0,
-      ),
-    ),
-    'required' => 0,
-    'description' => '',
-    'field_name' => 'field_attachments',
-    'entity_type' => 'node',
-    'bundle' => 'article',
+    'bundle' => 'wiki_page',
     'deleted' => '0',
   );
 
@@ -1079,7 +810,7 @@ function custom_config_drush_ctex_bonus_instances() {
     'default_value' => NULL,
   );
 
-  $instances['node:wiki_page:body'] = array(
+  $instances['node:article:body'] = array(
     'label' => 'Body',
     'widget' => array(
       'type' => 'text_textarea_with_summary',
@@ -1117,22 +848,19 @@ function custom_config_drush_ctex_bonus_instances() {
     'description' => '',
     'field_name' => 'body',
     'entity_type' => 'node',
-    'bundle' => 'wiki_page',
+    'bundle' => 'article',
     'deleted' => '0',
     'default_value' => NULL,
   );
 
-  $instances['node:wiki_page:field_tags'] = array(
-    'label' => 'Tags',
+  $instances['node:article:field_category'] = array(
+    'label' => 'Category',
     'widget' => array(
-      'weight' => '33',
-      'type' => 'taxonomy_autocomplete',
-      'module' => 'taxonomy',
-      'active' => 0,
-      'settings' => array(
-        'size' => 60,
-        'autocomplete_path' => 'taxonomy/autocomplete',
-      ),
+      'weight' => '32',
+      'type' => 'options_select',
+      'module' => 'options',
+      'active' => 1,
+      'settings' => array(),
     ),
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1152,13 +880,285 @@ function custom_config_drush_ctex_bonus_instances() {
         'weight' => 0,
       ),
     ),
+    'required' => 1,
+    'description' => 'The category this article belongs to.',
+    'default_value' => NULL,
+    'field_name' => 'field_category',
+    'entity_type' => 'node',
+    'bundle' => 'article',
+    'deleted' => '0',
+  );
+
+  $instances['node:article:field_tags'] = array(
+    'label' => 'Tags',
+    'widget' => array(
+      'weight' => '34',
+      'type' => 'taxonomy_autocomplete',
+      'module' => 'taxonomy',
+      'active' => 0,
+      'settings' => array(
+        'size' => 60,
+        'autocomplete_path' => 'taxonomy/autocomplete',
+      ),
+    ),
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'type' => 'taxonomy_term_reference_link',
+        'settings' => array(),
+        'module' => 'taxonomy',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'type' => 'hidden',
+        'label' => 'above',
+        'settings' => array(),
+        'weight' => 0,
+      ),
+    ),
     'required' => 0,
     'description' => '',
     'default_value' => NULL,
     'field_name' => 'field_tags',
     'entity_type' => 'node',
-    'bundle' => 'wiki_page',
+    'bundle' => 'article',
     'deleted' => '0',
+  );
+
+  $instances['node:article:field_attachments'] = array(
+    'label' => 'Attachments',
+    'widget' => array(
+      'weight' => '36',
+      'type' => 'file_generic',
+      'module' => 'file',
+      'active' => 1,
+      'settings' => array(
+        'progress_indicator' => 'bar',
+      ),
+    ),
+    'settings' => array(
+      'file_directory' => 'attachments/articles',
+      'file_extensions' => 'odt odf doc docx zip tar gz bz2 jpg jpeg png gif txt xls ods xlsx odp ppt pdf pptx',
+      'max_filesize' => '',
+      'description_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'type' => 'file_default',
+        'settings' => array(),
+        'module' => 'file',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'type' => 'hidden',
+        'label' => 'above',
+        'settings' => array(),
+        'weight' => 0,
+      ),
+    ),
+    'required' => 0,
+    'description' => '',
+    'field_name' => 'field_attachments',
+    'entity_type' => 'node',
+    'bundle' => 'article',
+    'deleted' => '0',
+  );
+
+  $instances['comment:comment_node_forum:comment_body'] = array(
+    'label' => 'Comment',
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'required' => TRUE,
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+        'settings' => array(),
+        'module' => 'text',
+      ),
+    ),
+    'widget' => array(
+      'type' => 'text_textarea',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'weight' => 0,
+      'module' => 'text',
+    ),
+    'description' => '',
+    'field_name' => 'comment_body',
+    'entity_type' => 'comment',
+    'bundle' => 'comment_node_forum',
+    'deleted' => '0',
+    'default_value' => NULL,
+  );
+
+  $instances['comment:comment_node_page:comment_body'] = array(
+    'label' => 'Comment',
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'required' => TRUE,
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+        'settings' => array(),
+        'module' => 'text',
+      ),
+    ),
+    'widget' => array(
+      'type' => 'text_textarea',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'weight' => 0,
+      'module' => 'text',
+    ),
+    'description' => '',
+    'field_name' => 'comment_body',
+    'entity_type' => 'comment',
+    'bundle' => 'comment_node_page',
+    'deleted' => '0',
+    'default_value' => NULL,
+  );
+
+  $instances['comment:comment_node_wiki_page:comment_body'] = array(
+    'label' => 'Comment',
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'required' => TRUE,
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+        'settings' => array(),
+        'module' => 'text',
+      ),
+    ),
+    'widget' => array(
+      'type' => 'text_textarea',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'weight' => 0,
+      'module' => 'text',
+    ),
+    'description' => '',
+    'field_name' => 'comment_body',
+    'entity_type' => 'comment',
+    'bundle' => 'comment_node_wiki_page',
+    'deleted' => '0',
+    'default_value' => NULL,
+  );
+
+  $instances['comment:comment_node_webform:comment_body'] = array(
+    'label' => 'Comment',
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'required' => TRUE,
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+        'settings' => array(),
+        'module' => 'text',
+      ),
+    ),
+    'widget' => array(
+      'type' => 'text_textarea',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'weight' => 0,
+      'module' => 'text',
+    ),
+    'description' => '',
+    'field_name' => 'comment_body',
+    'entity_type' => 'comment',
+    'bundle' => 'comment_node_webform',
+    'deleted' => '0',
+    'default_value' => NULL,
+  );
+
+  $instances['comment:comment_node_article:comment_body'] = array(
+    'label' => 'Comment',
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'required' => TRUE,
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+        'settings' => array(),
+        'module' => 'text',
+      ),
+    ),
+    'widget' => array(
+      'type' => 'text_textarea',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'weight' => 0,
+      'module' => 'text',
+    ),
+    'description' => '',
+    'field_name' => 'comment_body',
+    'entity_type' => 'comment',
+    'bundle' => 'comment_node_article',
+    'deleted' => '0',
+    'default_value' => NULL,
+  );
+
+  $instances['comment:comment_node_poll:comment_body'] = array(
+    'label' => 'Comment',
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'required' => TRUE,
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+        'settings' => array(),
+        'module' => 'text',
+      ),
+    ),
+    'widget' => array(
+      'type' => 'text_textarea',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'weight' => 0,
+      'module' => 'text',
+    ),
+    'description' => '',
+    'field_name' => 'comment_body',
+    'entity_type' => 'comment',
+    'bundle' => 'comment_node_poll',
+    'deleted' => '0',
+    'default_value' => NULL,
   );
 
   $instances['profile2:main:field_name'] = array(

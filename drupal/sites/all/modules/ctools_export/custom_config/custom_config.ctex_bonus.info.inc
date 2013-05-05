@@ -39,6 +39,8 @@ function custom_config_drush_ctex_bonus_info_dependencies() {
     'path',
     'pathauto',
     'poll',
+    'print',
+    'print_pdf',
     'profile2',
     'rdf',
     'search',
