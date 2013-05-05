@@ -24,9 +24,9 @@ function custom_config_drush_ctex_bonus_variables() {
     'admin_menu.icon' => TRUE,
     'admin_menu.menu' => TRUE,
     'admin_menu.search' => TRUE,
-    'admin_menu.users' => TRUE,
     'admin_menu.account' => TRUE,
     'shortcut.links' => FALSE,
+    'admin_menu.users' => FALSE,
   );
 
   $variables['admin_menu_devel_modules_skip'] = array(
@@ -79,7 +79,7 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['advanced_forum_views_as_tabs'] = 1;
 
-  $variables['advanced__active_tab'] = 'edit-tweaks';
+  $variables['advanced__active_tab'] = 'edit-performance';
 
   $variables['anonymous'] = 'Anonymous';
 
@@ -2107,6 +2107,83 @@ function custom_config_drush_ctex_bonus_variables() {
     2 => 'Tag/language attribute value',
   );
 
+  $variables['imce_profiles'] = array(
+    1 => array(
+      'name' => 'Normal User',
+      'usertab' => 1,
+      'filesize' => '1',
+      'quota' => '20',
+      'tuquota' => '20',
+      'extensions' => 'odt odf doc docx zip tar gz bz2 jpg jpeg png gif txt xls ods xlsx odp ppt pdf pptx tex latex',
+      'dimensions' => '1200x1200',
+      'filenum' => '3',
+      'directories' => array(
+        0 => array(
+          'name' => 'php: return \'uploads/\'.$user->name;',
+          'subnav' => 1,
+          'browse' => 1,
+          'upload' => 1,
+          'thumb' => 1,
+          'delete' => 1,
+          'resize' => 1,
+        ),
+      ),
+      'thumbnails' => array(
+        0 => array(
+          'name' => 'Small',
+          'dimensions' => '90x90',
+          'prefix' => 'small_',
+          'suffix' => '',
+        ),
+        1 => array(
+          'name' => 'Medium',
+          'dimensions' => '120x120',
+          'prefix' => 'medium_',
+          'suffix' => '',
+        ),
+        2 => array(
+          'name' => 'Large',
+          'dimensions' => '180x180',
+          'prefix' => 'large_',
+          'suffix' => '',
+        ),
+      ),
+    ),
+  );
+
+  $variables['imce_roles_profiles'] = array(
+    5 => array(
+      'weight' => '0',
+      'public_pid' => '1',
+    ),
+    3 => array(
+      'weight' => '0',
+      'public_pid' => '1',
+    ),
+    4 => array(
+      'weight' => '0',
+      'public_pid' => '1',
+    ),
+    2 => array(
+      'weight' => 11,
+      'public_pid' => '1',
+    ),
+    1 => array(
+      'weight' => 12,
+      'public_pid' => 0,
+    ),
+  );
+
+  $variables['imce_settings_absurls'] = 0;
+
+  $variables['imce_settings_disable_private'] = 1;
+
+  $variables['imce_settings_replace'] = '0';
+
+  $variables['imce_settings_textarea'] = '';
+
+  $variables['imce_settings_thumb_method'] = 'scale_and_crop';
+
   $variables['menu_expanded'] = array();
 
   $variables['menu_masks'] = array(
@@ -2286,11 +2363,17 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['pathauto_forum_pattern'] = 'forum/[term:parents]/[term:name]';
 
+  $variables['pathauto_node_article_pattern'] = '';
+
   $variables['pathauto_node_forum_pattern'] = 'forum/topic/[node:title]';
 
   $variables['pathauto_node_page_pattern'] = '[node:title]';
 
   $variables['pathauto_node_pattern'] = 'p/[node:title]';
+
+  $variables['pathauto_node_poll_pattern'] = 'polls/[node:title]';
+
+  $variables['pathauto_node_webform_pattern'] = 'form/[node:title]';
 
   $variables['pathauto_node_wiki_page_pattern'] = 'wiki/[node:title]';
 
@@ -2331,7 +2414,11 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['print_html_new_window'] = 0;
 
-  $variables['print_html_node_link_pages'] = '';
+  $variables['print_html_node_link_pages'] = 'forum/*
+forums/*
+tags/*
+categories/*
+u/*';
 
   $variables['print_html_node_link_visibility'] = '0';
 
@@ -2388,7 +2475,11 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['print_pdf_link_use_alias'] = 0;
 
-  $variables['print_pdf_node_link_pages'] = '';
+  $variables['print_pdf_node_link_pages'] = 'forum/*
+forums/*
+tags/*
+categories/*
+u/*';
 
   $variables['print_pdf_node_link_visibility'] = '0';
 
@@ -2644,7 +2735,7 @@ Your account on [site:name] has been canceled.
 
   $variables['wikitools_subpages_handling'] = 'url';
 
-  $variables['xmlsitemap_generated_last'] = 1367743217;
+  $variables['xmlsitemap_generated_last'] = 1367774124;
 
   $variables['xmlsitemap_regenerate_needed'] = FALSE;
 
