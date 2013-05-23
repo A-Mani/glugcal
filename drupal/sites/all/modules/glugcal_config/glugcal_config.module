@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Glugcal Config feature.
+ */
+
+include_once 'glugcal_config.features.inc';
