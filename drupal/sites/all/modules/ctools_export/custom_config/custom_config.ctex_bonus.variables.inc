@@ -16,6 +16,8 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['additional_settings__active_tab_page'] = 'edit-xmlsitemap';
 
+  $variables['additional_settings__active_tab_poll'] = 'edit-display';
+
   $variables['additional_settings__active_tab_wiki_page'] = 'edit-xmlsitemap';
 
   $variables['admin_menu_cache_client'] = 1;
@@ -101,9 +103,34 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['clean_url'] = '1';
 
+  $variables['color_skeletontheme_files'] = array(
+    0 => 'public://color/skeletontheme-7d5d84fe/logo.png',
+    1 => 'public://color/skeletontheme-7d5d84fe/colors.css',
+  );
+
+  $variables['color_skeletontheme_logo'] = 'public://color/skeletontheme-7d5d84fe/logo.png';
+
+  $variables['color_skeletontheme_palette'] = array(
+    'text' => '#161616',
+    'link' => '#b52c38',
+    'linkhover' => '#b52c38',
+    'headings' => '#536682',
+    'sitename' => '#536682',
+    'sitenamehover' => '#536682',
+    'slogan' => '#161616',
+    'bodyborder' => '#de6846',
+    'wrapborder' => '#d9964b',
+  );
+
+  $variables['color_skeletontheme_stylesheets'] = array(
+    0 => 'public://color/skeletontheme-7d5d84fe/colors.css',
+  );
+
   $variables['comment_anonymous_article'] = 0;
 
   $variables['comment_anonymous_page'] = 0;
+
+  $variables['comment_anonymous_poll'] = 0;
 
   $variables['comment_anonymous_wiki_page'] = 0;
 
@@ -113,11 +140,15 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['comment_default_mode_page'] = 1;
 
+  $variables['comment_default_mode_poll'] = 1;
+
   $variables['comment_default_mode_wiki_page'] = 1;
 
   $variables['comment_default_per_page_article'] = '50';
 
   $variables['comment_default_per_page_page'] = '50';
+
+  $variables['comment_default_per_page_poll'] = '50';
 
   $variables['comment_default_per_page_wiki_page'] = '50';
 
@@ -125,19 +156,27 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['comment_form_location_page'] = 1;
 
+  $variables['comment_form_location_poll'] = 1;
+
   $variables['comment_form_location_wiki_page'] = 1;
 
   $variables['comment_page'] = '1';
 
+  $variables['comment_poll'] = '2';
+
   $variables['comment_preview_article'] = '1';
 
   $variables['comment_preview_page'] = '1';
+
+  $variables['comment_preview_poll'] = '1';
 
   $variables['comment_preview_wiki_page'] = '1';
 
   $variables['comment_subject_field_article'] = 1;
 
   $variables['comment_subject_field_page'] = 1;
+
+  $variables['comment_subject_field_poll'] = 1;
 
   $variables['comment_subject_field_wiki_page'] = 1;
 
@@ -148,6 +187,8 @@ function custom_config_drush_ctex_bonus_variables() {
   $variables['cron_key'] = 'Ie1oRn1ZhuuUsPrUmX0rJMg-d1bO9qSlXr_sT-6MipI';
 
   $variables['date_default_timezone'] = 'Asia/Calcutta';
+
+  $variables['default_nodes_main'] = '10';
 
   $variables['drupal_http_request_fails'] = FALSE;
 
@@ -2184,6 +2225,8 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['imce_settings_thumb_method'] = 'scale_and_crop';
 
+  $variables['isFirstNoStickyNode'] = FALSE;
+
   $variables['menu_expanded'] = array();
 
   $variables['menu_masks'] = array(
@@ -2212,20 +2255,21 @@ function custom_config_drush_ctex_bonus_variables() {
     22 => 31,
     23 => 30,
     24 => 29,
-    25 => 24,
-    26 => 22,
-    27 => 21,
-    28 => 15,
-    29 => 14,
-    30 => 13,
-    31 => 11,
-    32 => 10,
-    33 => 7,
-    34 => 6,
-    35 => 5,
-    36 => 3,
-    37 => 2,
-    38 => 1,
+    25 => 25,
+    26 => 24,
+    27 => 22,
+    28 => 21,
+    29 => 15,
+    30 => 14,
+    31 => 13,
+    32 => 11,
+    33 => 10,
+    34 => 7,
+    35 => 6,
+    36 => 5,
+    37 => 3,
+    38 => 2,
+    39 => 1,
   );
 
   $variables['menu_options_article'] = array(
@@ -2237,6 +2281,10 @@ function custom_config_drush_ctex_bonus_variables() {
     0 => 'main-menu',
   );
 
+  $variables['menu_options_poll'] = array(
+    0 => 'main-menu',
+  );
+
   $variables['menu_options_wiki_page'] = array(
     0 => 'main-menu',
   );
@@ -2245,9 +2293,11 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['menu_parent_page'] = 'main-menu:0';
 
+  $variables['menu_parent_poll'] = 'main-menu:0';
+
   $variables['menu_parent_wiki_page'] = 'main-menu:0';
 
-  $variables['node_admin_theme'] = 1;
+  $variables['node_admin_theme'] = 0;
 
   $variables['node_export_code'] = 'all';
 
@@ -2342,6 +2392,10 @@ function custom_config_drush_ctex_bonus_variables() {
     1 => 'revision',
   );
 
+  $variables['node_options_poll'] = array(
+    0 => 'status',
+  );
+
   $variables['node_options_wiki_page'] = array(
     0 => 'status',
     1 => 'revision',
@@ -2351,13 +2405,23 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['node_preview_page'] = '1';
 
+  $variables['node_preview_poll'] = '1';
+
   $variables['node_preview_wiki_page'] = '1';
 
   $variables['node_submitted_article'] = 1;
 
   $variables['node_submitted_page'] = 0;
 
+  $variables['node_submitted_poll'] = 1;
+
   $variables['node_submitted_wiki_page'] = 0;
+
+  $variables['page_manager_taxonomy_breadcrumb'] = 1;
+
+  $variables['page_manager_term_view_disabled'] = TRUE;
+
+  $variables['page_manager_term_view_type'] = 'single';
 
   $variables['pathauto_blog_pattern'] = 'blogs/[user:name]';
 
@@ -2391,7 +2455,19 @@ function custom_config_drush_ctex_bonus_variables() {
 
   $variables['print_css'] = '';
 
+  $variables['print_display_article'] = 1;
+
+  $variables['print_display_comment_article'] = 0;
+
+  $variables['print_display_comment_poll'] = 0;
+
+  $variables['print_display_poll'] = 1;
+
   $variables['print_display_sys_urllist'] = 0;
+
+  $variables['print_display_urllist_article'] = 1;
+
+  $variables['print_display_urllist_poll'] = 1;
 
   $variables['print_footer_options'] = '2';
 
@@ -2448,7 +2524,19 @@ u/*';
 
   $variables['print_pdf_content_disposition'] = '2';
 
+  $variables['print_pdf_display_article'] = 1;
+
+  $variables['print_pdf_display_comment_article'] = 0;
+
+  $variables['print_pdf_display_comment_poll'] = 0;
+
+  $variables['print_pdf_display_poll'] = 1;
+
   $variables['print_pdf_display_sys_urllist'] = 0;
+
+  $variables['print_pdf_display_urllist_article'] = 1;
+
+  $variables['print_pdf_display_urllist_poll'] = 1;
 
   $variables['print_pdf_dompdf_unicode'] = 1;
 
@@ -2519,21 +2607,167 @@ u/*';
 
   $variables['save_continue_wiki_page'] = 'Save and add fields';
 
+  $variables['site_403'] = '';
+
+  $variables['site_404'] = '';
+
   $variables['site_default_country'] = 'IN';
+
+  $variables['site_frontpage'] = 'home';
 
   $variables['site_mail'] = 'glugcal@ilug-cal.info';
 
   $variables['site_name'] = 'IGLUG-Cal';
 
+  $variables['site_slogan'] = 'Indian GNU/Linux Users Group - Kolkata Chapter';
+
   $variables['statistics_count_content_views'] = 1;
 
-  $variables['statistics_day_timestamp'] = 1367743217;
+  $variables['statistics_day_timestamp'] = 1369264666;
 
   $variables['statistics_enable_access_log'] = 1;
 
   $variables['statistics_flush_accesslog_timer'] = '259200';
 
-  $variables['theme_default'] = 'bartik';
+  $variables['theme_default'] = 'skeletontheme';
+
+  $variables['theme_journalcrunch_settings'] = array(
+    'toggle_logo' => 1,
+    'toggle_name' => 0,
+    'toggle_slogan' => 1,
+    'toggle_node_user_picture' => 1,
+    'toggle_comment_user_picture' => 1,
+    'toggle_comment_user_verification' => 1,
+    'toggle_favicon' => 1,
+    'toggle_main_menu' => 1,
+    'toggle_secondary_menu' => 1,
+    'default_logo' => 0,
+    'logo_path' => '',
+    'logo_upload' => '',
+    'default_favicon' => 1,
+    'favicon_path' => '',
+    'favicon_upload' => '',
+  );
+
+  $variables['theme_skeletontheme_settings'] = array(
+    'toggle_logo' => 0,
+    'toggle_name' => 1,
+    'toggle_slogan' => 1,
+    'toggle_node_user_picture' => 1,
+    'toggle_comment_user_picture' => 1,
+    'toggle_comment_user_verification' => 1,
+    'toggle_favicon' => 0,
+    'toggle_main_menu' => 1,
+    'toggle_secondary_menu' => 1,
+    'default_logo' => 1,
+    'logo_path' => '',
+    'logo_upload' => '',
+    'default_favicon' => 1,
+    'favicon_path' => '',
+    'favicon_upload' => '',
+    'scheme' => 'easycomeeasygo',
+    'palette' => array(
+      'text' => '#161616',
+      'link' => '#b52c38',
+      'linkhover' => '#b52c38',
+      'headings' => '#536682',
+      'sitename' => '#536682',
+      'sitenamehover' => '#536682',
+      'slogan' => '#161616',
+      'bodyborder' => '#de6846',
+      'wrapborder' => '#d9964b',
+    ),
+    'theme' => 'skeletontheme',
+    'info' => array(
+      'fields' => array(
+        'text' => 'Text color',
+        'link' => 'Links color',
+        'linkhover' => 'Links hover color',
+        'headings' => 'Headings color',
+        'sitename' => 'Site-name color',
+        'sitenamehover' => 'Site-name hover color',
+        'slogan' => 'Slogan color',
+        'bodyborder' => 'Body border top color',
+        'wrapborder' => 'Content border top color',
+      ),
+      'schemes' => array(
+        'default' => array(
+          'title' => 'Default',
+          'colors' => array(
+            'text' => '#444444',
+            'link' => '#2883DE',
+            'linkhover' => '#000000',
+            'headings' => '#181818',
+            'sitename' => '#262626',
+            'sitenamehover' => '#3253ad',
+            'slogan' => '#7d7d7d',
+            'bodyborder' => '#375199',
+            'wrapborder' => '#4565be',
+          ),
+        ),
+        'coronamusic' => array(
+          'title' => 'Corona Music',
+          'colors' => array(
+            'text' => '#101010',
+            'link' => '#e29300',
+            'linkhover' => '#e29300',
+            'headings' => '#101010',
+            'sitename' => '#194973',
+            'sitenamehover' => '#263973',
+            'slogan' => '#101010',
+            'bodyborder' => '#194973',
+            'wrapborder' => '#e29300',
+          ),
+        ),
+        'easycomeeasygo' => array(
+          'title' => 'Easy Come Easy Go',
+          'colors' => array(
+            'text' => '#161616',
+            'link' => '#b52c38',
+            'linkhover' => '#b52c38',
+            'headings' => '#536682',
+            'sitename' => '#536682',
+            'sitenamehover' => '#536682',
+            'slogan' => '#161616',
+            'bodyborder' => '#de6846',
+            'wrapborder' => '#d9964b',
+          ),
+        ),
+        '' => array(
+          'title' => 'Custom',
+          'colors' => array(),
+        ),
+      ),
+      'css' => array(
+        0 => 'color/colors.css',
+      ),
+      'copy' => array(
+        0 => 'logo.png',
+      ),
+      'gradients' => array(
+        0 => array(
+          'dimension' => array(
+            0 => 0,
+            1 => 0,
+            2 => 0,
+            3 => 0,
+          ),
+          'direction' => 'vertical',
+          'colors' => array(
+            0 => 'top',
+            1 => 'bottom',
+          ),
+        ),
+      ),
+      'fill' => array(),
+      'slices' => array(),
+      'blend_target' => '#ffffff',
+      'preview_css' => 'color/preview.css',
+      'preview_js' => 'color/preview.js',
+      'preview_html' => 'color/preview.html',
+      'base_image' => 'color/base.png',
+    ),
+  );
 
   $variables['user_admin_role'] = '0';
 
@@ -2673,6 +2907,37 @@ Your account on [site:name] has been canceled.
 
   $variables['user_signatures'] = 0;
 
+  $variables['views_defaults'] = array(
+    'frontpage' => TRUE,
+    'popular' => TRUE,
+  );
+
+  $variables['views_exposed_filter_any_label'] = 'new_any';
+
+  $variables['views_show_additional_queries'] = 0;
+
+  $variables['views_ui_always_live_preview'] = 1;
+
+  $variables['views_ui_custom_theme'] = '_default';
+
+  $variables['views_ui_display_embed'] = 0;
+
+  $variables['views_ui_show_advanced_column'] = 0;
+
+  $variables['views_ui_show_advanced_help_warning'] = 0;
+
+  $variables['views_ui_show_listing_filters'] = 0;
+
+  $variables['views_ui_show_master_display'] = 0;
+
+  $variables['views_ui_show_performance_statistics'] = 0;
+
+  $variables['views_ui_show_preview_information'] = 1;
+
+  $variables['views_ui_show_sql_query'] = 0;
+
+  $variables['views_ui_show_sql_query_where'] = 'above';
+
   $variables['webform_csv_delimiter'] = ',';
 
   $variables['webform_default_format'] = 0;
@@ -2737,7 +3002,7 @@ Your account on [site:name] has been canceled.
 
   $variables['xmlsitemap_generated_last'] = 1367774124;
 
-  $variables['xmlsitemap_regenerate_needed'] = FALSE;
+  $variables['xmlsitemap_regenerate_needed'] = TRUE;
 
   $variables['xmlsitemap_settings_menu_link_main-menu'] = array(
     'status' => '1',
@@ -2751,6 +3016,11 @@ Your account on [site:name] has been canceled.
 
   $variables['xmlsitemap_settings_node_page'] = array(
     'status' => '1',
+    'priority' => '0.5',
+  );
+
+  $variables['xmlsitemap_settings_node_poll'] = array(
+    'status' => '0',
     'priority' => '0.5',
   );
 

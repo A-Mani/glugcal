@@ -24,7 +24,7 @@ function custom_config_drush_ctex_bonus_menus() {
         'options' => 'a:1:{s:10:"attributes";a:1:{s:5:"title";s:0:"";}}',
         'hidden' => '0',
         'external' => '1',
-        'weight' => '0',
+        'weight' => '-50',
       ),
       'wiki' => array(
         'link_path' => 'wiki',
@@ -33,7 +33,7 @@ function custom_config_drush_ctex_bonus_menus() {
         'options' => 'a:1:{s:10:"attributes";a:1:{s:5:"title";s:0:"";}}',
         'hidden' => '0',
         'external' => '0',
-        'weight' => '1',
+        'weight' => '-47',
       ),
       'forum' => array(
         'link_path' => 'forum',
@@ -42,7 +42,7 @@ function custom_config_drush_ctex_bonus_menus() {
         'options' => 'a:1:{s:10:"attributes";a:1:{s:5:"title";s:0:"";}}',
         'hidden' => '0',
         'external' => '0',
-        'weight' => '2',
+        'weight' => '-46',
       ),
       'forum/%' => array(
         'link_path' => 'forum/%',

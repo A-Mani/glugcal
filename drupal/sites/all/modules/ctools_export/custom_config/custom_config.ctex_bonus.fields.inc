@@ -473,11 +473,11 @@ function custom_config_drush_ctex_bonus_instances() {
       'user_register_form' => FALSE,
     ),
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'taxonomy_forums',
     'entity_type' => 'node',
     'bundle' => 'forum',
     'deleted' => '0',
-    'default_value' => NULL,
   );
 
   $instances['node:forum:body'] = array(
@@ -516,11 +516,11 @@ function custom_config_drush_ctex_bonus_instances() {
     ),
     'required' => FALSE,
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'body',
     'entity_type' => 'node',
     'bundle' => 'forum',
     'deleted' => '0',
-    'default_value' => NULL,
   );
 
   $instances['node:forum:field_tags'] = array(
@@ -598,11 +598,11 @@ function custom_config_drush_ctex_bonus_instances() {
     ),
     'required' => FALSE,
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'body',
     'entity_type' => 'node',
     'bundle' => 'page',
     'deleted' => '0',
-    'default_value' => NULL,
   );
 
   $instances['node:page:field_attachments'] = array(
@@ -721,11 +721,11 @@ function custom_config_drush_ctex_bonus_instances() {
     ),
     'required' => FALSE,
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'body',
     'entity_type' => 'node',
     'bundle' => 'wiki_page',
     'deleted' => '0',
-    'default_value' => NULL,
   );
 
   $instances['node:wiki_page:field_tags'] = array(
@@ -803,11 +803,11 @@ function custom_config_drush_ctex_bonus_instances() {
     ),
     'required' => FALSE,
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'body',
     'entity_type' => 'node',
     'bundle' => 'webform',
     'deleted' => '0',
-    'default_value' => NULL,
   );
 
   $instances['node:article:body'] = array(
@@ -846,11 +846,11 @@ function custom_config_drush_ctex_bonus_instances() {
     ),
     'required' => FALSE,
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'body',
     'entity_type' => 'node',
     'bundle' => 'article',
     'deleted' => '0',
-    'default_value' => NULL,
   );
 
   $instances['node:article:field_category'] = array(
@@ -994,11 +994,11 @@ function custom_config_drush_ctex_bonus_instances() {
       'module' => 'text',
     ),
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'comment_body',
     'entity_type' => 'comment',
     'bundle' => 'comment_node_forum',
     'deleted' => '0',
-    'default_value' => NULL,
   );
 
   $instances['comment:comment_node_page:comment_body'] = array(
@@ -1026,11 +1026,11 @@ function custom_config_drush_ctex_bonus_instances() {
       'module' => 'text',
     ),
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'comment_body',
     'entity_type' => 'comment',
     'bundle' => 'comment_node_page',
     'deleted' => '0',
-    'default_value' => NULL,
   );
 
   $instances['comment:comment_node_wiki_page:comment_body'] = array(
@@ -1058,11 +1058,11 @@ function custom_config_drush_ctex_bonus_instances() {
       'module' => 'text',
     ),
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'comment_body',
     'entity_type' => 'comment',
     'bundle' => 'comment_node_wiki_page',
     'deleted' => '0',
-    'default_value' => NULL,
   );
 
   $instances['comment:comment_node_webform:comment_body'] = array(
@@ -1090,11 +1090,11 @@ function custom_config_drush_ctex_bonus_instances() {
       'module' => 'text',
     ),
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'comment_body',
     'entity_type' => 'comment',
     'bundle' => 'comment_node_webform',
     'deleted' => '0',
-    'default_value' => NULL,
   );
 
   $instances['comment:comment_node_article:comment_body'] = array(
@@ -1122,11 +1122,11 @@ function custom_config_drush_ctex_bonus_instances() {
       'module' => 'text',
     ),
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'comment_body',
     'entity_type' => 'comment',
     'bundle' => 'comment_node_article',
     'deleted' => '0',
-    'default_value' => NULL,
   );
 
   $instances['comment:comment_node_poll:comment_body'] = array(
@@ -1154,9 +1154,41 @@ function custom_config_drush_ctex_bonus_instances() {
       'module' => 'text',
     ),
     'description' => '',
+    'default_value' => NULL,
     'field_name' => 'comment_body',
     'entity_type' => 'comment',
     'bundle' => 'comment_node_poll',
+    'deleted' => '0',
+  );
+
+  $instances['comment:comment_node_panel:comment_body'] = array(
+    'label' => 'Comment',
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'required' => TRUE,
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+        'settings' => array(),
+        'module' => 'text',
+      ),
+    ),
+    'widget' => array(
+      'type' => 'text_textarea',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'weight' => 0,
+      'module' => 'text',
+    ),
+    'description' => '',
+    'field_name' => 'comment_body',
+    'entity_type' => 'comment',
+    'bundle' => 'comment_node_panel',
     'deleted' => '0',
     'default_value' => NULL,
   );

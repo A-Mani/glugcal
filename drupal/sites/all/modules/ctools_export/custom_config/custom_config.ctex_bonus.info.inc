@@ -17,10 +17,12 @@ function custom_config_drush_ctex_bonus_info_dependencies() {
     'admin_menu_toolbar',
     'advanced_forum',
     'block',
+    'bulk_export',
     'captcha',
     'ckeditor',
     'comment',
     'contact',
+    'ctools_custom_content',
     'entity',
     'file',
     'filter',
@@ -38,6 +40,10 @@ function custom_config_drush_ctex_bonus_info_dependencies() {
     'number',
     'openid',
     'options',
+    'page_manager',
+    'panels',
+    'panels_mini',
+    'panels_node',
     'path',
     'pathauto',
     'poll',
@@ -47,6 +53,7 @@ function custom_config_drush_ctex_bonus_info_dependencies() {
     'rdf',
     'search',
     'statistics',
+    'stylizer',
     'system',
     'taxonomy',
     'text',
@@ -55,6 +62,7 @@ function custom_config_drush_ctex_bonus_info_dependencies() {
     'uuid',
     'uuid_path',
     'views',
+    'views_content',
     'webform',
     'wikitools',
     'xmlsitemap',
@@ -71,7 +79,19 @@ function custom_config_drush_ctex_bonus_info_dependencies() {
  */
 function custom_config_drush_ctex_bonus_info_files() {
   return array(
+    'custom_config.ctools_content.inc' => array(
+      'overwrite' => TRUE,
+    ),
+    'custom_config.pipelines.inc' => array(
+      'overwrite' => TRUE,
+    ),
+    'custom_config.stylizer.inc' => array(
+      'overwrite' => TRUE,
+    ),
     'custom_config.views_default.inc' => array(
+      'overwrite' => TRUE,
+    ),
+    'custom_config.pages_default.inc' => array(
       'overwrite' => TRUE,
     ),
     'custom_config.module' => array(
