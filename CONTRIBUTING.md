@@ -27,18 +27,16 @@ guidance and follow it as closely as possible.
 
 ## Contributing settings
 
-We use `drush_ctex_bonus` module to export Drupal's configuration to
-code. To install `drush_ctex_bonus` module, please see the
-[installation instructions](http://drupal.org/project/drush_ctex_bonus).
+We use `Features` module with a load of supporting modules to export
+Drupal's configuration to code.
 
-If you have changed any important configuration and want to contribute that change, please use:
+If you have changed any important configuration and want to contribute that change, please recreate the "Glugcal config" feature. Use the "Glugcal content" feature for exporting useful nodes.
 
-```sh
-$ cd drupal # Enter the drupal directory of your repository
-$ drush ctex_bonus custom_config # We name our custom configuration module as "custom_config"
-$ git add .
-$ git commit -m "Your commit message here about what changes you have done"
-```
+To recreate the features, go to
+"Admin->Structure->Features->IGLUG-Cal" and hit "Recreate" for the
+feature module needed. After selecting all required options in the
+recreate page, click "Generate Feature" button. This will update the
+corresponding module with new code.
 
 ## Contributing code
 
