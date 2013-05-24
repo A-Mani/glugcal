@@ -339,6 +339,21 @@ function glugcal_config_menu_default_menu_links() {
     'weight' => 0,
     'parent_path' => 'admin/config/content',
   );
+  // Exported menu link: management:admin/config/content/pollanon
+  $menu_links['management:admin/config/content/pollanon'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/config/content/pollanon',
+    'router_path' => 'admin/config/content/pollanon',
+    'link_title' => 'Poll Enhancements',
+    'options' => array(),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'parent_path' => 'admin/config/content',
+  );
   // Exported menu link: management:admin/config/content/webform
   $menu_links['management:admin/config/content/webform'] = array(
     'menu_name' => 'management',
@@ -1888,7 +1903,7 @@ function glugcal_config_menu_default_menu_links() {
     'link_title' => 'Polls',
     'options' => array(),
     'module' => 'system',
-    'hidden' => 1,
+    'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
@@ -1978,6 +1993,21 @@ function glugcal_config_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -10,
   );
+  // Exported menu link: user-menu:user/login
+  $menu_links['user-menu:user/login'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user/login',
+    'router_path' => 'user/login',
+    'link_title' => 'Log in',
+    'options' => array(),
+    'module' => 'system',
+    'hidden' => -1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'parent_path' => 'user',
+  );
   // Exported menu link: user-menu:user/logout
   $menu_links['user-menu:user/logout'] = array(
     'menu_name' => 'user-menu',
@@ -1991,6 +2021,21 @@ function glugcal_config_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => 10,
+  );
+  // Exported menu link: user-menu:user/register
+  $menu_links['user-menu:user/register'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user/register',
+    'router_path' => 'user/register',
+    'link_title' => 'Create new account',
+    'options' => array(),
+    'module' => 'system',
+    'hidden' => -1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'parent_path' => 'user',
   );
   // Translatables
   // Included for use with string extractors like potx.
@@ -2017,6 +2062,7 @@ function glugcal_config_menu_default_menu_links() {
   t('Content authoring');
   t('Content types');
   t('Courses');
+  t('Create new account');
   t('Cron');
   t('Custom content panes');
   t('Date and time');
@@ -2037,6 +2083,7 @@ function glugcal_config_menu_default_menu_links() {
   t('Image styles');
   t('Image toolkit');
   t('Jobs');
+  t('Log in');
   t('Log out');
   t('Logging and errors');
   t('Main menu');
@@ -2055,6 +2102,7 @@ function glugcal_config_menu_default_menu_links() {
   t('People');
   t('Performance');
   t('Poll');
+  t('Poll Enhancements');
   t('Polls');
   t('Printer, email and PDF versions');
   t('Profile types');

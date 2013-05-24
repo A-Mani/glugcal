@@ -1024,6 +1024,7 @@ function glugcal_config_user_default_permissions() {
     'name' => 'edit any wiki_page content',
     'roles' => array(
       'admin' => 'admin',
+      'authenticated user' => 'authenticated user',
       'moderator' => 'moderator',
     ),
     'module' => 'node',
